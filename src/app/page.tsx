@@ -2,6 +2,7 @@ import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { CTA } from "@/components/CTA";
 import { Features } from "@/components/Features/Features";
 import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
+import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Testimonials } from "@/components/Testimonials";
 import { Typewriter } from "@/components/Typewriter";
@@ -17,6 +18,7 @@ import {
   Title,
   rem,
   AvatarGroup,
+  ThemeIcon,
 } from "@mantine/core";
 
 export default function Home() {
@@ -61,7 +63,7 @@ export default function Home() {
             order={1}
             className="text-gradient"
             style={{
-              fontSize: rem(64),
+              fontSize: rem(60),
               fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
@@ -106,7 +108,7 @@ export default function Home() {
           </Text>
 
           {/* CTA Group */}
-          <Stack align="center" gap="xs" mt="md">
+          <Stack align="center" gap="xs">
             <Button
               size="xl"
               radius="xl"
@@ -119,9 +121,86 @@ export default function Home() {
             >
               Add to Chrome - It's Free
             </Button>
-            <Text size="sm" c="dimmed" fw={500}>
-              No credit card required • No sign up needed
-            </Text>
+            {/* UPGRADE: Helper Text dengan Social Proof */}
+            <Box
+              mt="lg"
+              py={10}
+              px={24}
+              style={{
+                borderRadius: 999,
+                backgroundColor: "rgba(255, 255, 255, 0.03)",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                display: "inline-block",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+              }}
+            >
+              <Group gap="xl" wrap="wrap" justify="center">
+                {/* No Credit Card */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">💳</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    No credit card
+                  </Text>
+                </Group>
+
+                {/* Divider */}
+                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
+
+                {/* No Sign Up */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">👤</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    No sign up
+                  </Text>
+                </Group>
+
+                {/* Divider */}
+                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
+
+                {/* Trusted */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">⭐</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    Trusted by{" "}
+                    <Text span fw={700} c="white">
+                      100+
+                    </Text>
+                  </Text>
+                </Group>
+              </Group>
+            </Box>
           </Stack>
         </Stack>
 
@@ -132,6 +211,7 @@ export default function Home() {
       <SecondaryFeatures />
       <Testimonials />
       <CTA />
+      <Footer />
     </Box>
   );
 }
