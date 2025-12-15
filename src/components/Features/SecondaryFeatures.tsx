@@ -10,6 +10,8 @@ import {
   Title,
   Paper,
   rem,
+  Badge,
+  Group,
 } from "@mantine/core";
 
 const secondaryFeatures = [
@@ -73,43 +75,93 @@ const secondaryFeatures = [
     description:
       "Avoid spam detection. Automatically randomize greetings and phrases (e.g., {Hi|Hello}) so every message looks unique.",
   },
+  {
+    emoji: "🎯",
+    title: "Smart Filter Segments",
+    description:
+      "Target the right audience. Create dynamic rules to filter contacts by tags, country, or activity for laser-focused campaigns.",
+  },
+  {
+    emoji: "😀",
+    title: "Emoji & Formatting",
+    description:
+      "Express yourself clearly. Built-in emoji picker and rich text tools (Bold, Italic, Strikethrough) for perfect message composition.",
+  },
+  {
+    emoji: "⏰",
+    title: "Personal Message Scheduler",
+    description:
+      "Never miss a follow-up. Schedule messages for individual chats to be delivered automatically at a future time.",
+  },
+  {
+    emoji: "✨",
+    title: "AI Writer Assistant",
+    description:
+      "Your personal writing genius. Fix grammar, rewrite text, or change the tone of your messages instantly before sending.",
+    comingSoon: true,
+  },
+  {
+    emoji: "📁",
+    title: "Custom Chat Tabs",
+    description:
+      "Organize your chaos. Create custom tabs (Labels) like 'Leads', 'VIP', or 'Family' to categorize your chats for easy access.",
+    comingSoon: true,
+  },
+  {
+    emoji: "📢",
+    title: "Group Link Manager",
+    description:
+      "Track and manage your group invite links efficiently. Monitor traffic and join requests from a single dashboard.",
+    comingSoon: true,
+  },
+  {
+    emoji: "🌐",
+    title: "AI Translate",
+    description: "Break language barriers. Translation for incoming  messages.",
+    comingSoon: true,
+  },
+  {
+    emoji: "💾",
+    title: "Chat Backup",
+    description:
+      "Secure your business data. Automatically backup chats, media, and contacts to your computer or cloud storage.",
+    comingSoon: true,
+  },
 ];
 
 export function SecondaryFeatures() {
   return (
     <Box py={100} style={{ position: "relative", zIndex: 1 }}>
-      <Container size="xl">
-        <Stack gap="xl" align="center" mb={60}>
+      <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
+        <Stack align="center" mb={{ base: 40, md: 80 }}>
+          <Text
+            c="emerald"
+            fw={700}
+            style={{ textTransform: "uppercase", letterSpacing: "2px" }}
+          >
+            Powerful Extras
+          </Text>
           <Title
             order={2}
             ta="center"
-            style={{ fontSize: rem(42), fontWeight: 700 }}
+            style={{ fontSize: rem(42) }}
+            className="text-gradient"
           >
-            Everything You Need to <br />
-            <Text
-              span
-              inherit
-              style={{
-                background: "linear-gradient(to right, #34d399, #10b981)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Dominate WhatsApp
-            </Text>
+            Everything You Need to Scale
           </Title>
           <Text c="dimmed" ta="center" maw={600} size="lg">
-            Powerful utilities built directly into your browser to handle strict
-            business requirements.
+            Supawazap is packed with utility tools designed to make your
+            WhatsApp marketing workflow seamless and efficient.
           </Text>
         </Stack>
 
         <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={30}>
-          {secondaryFeatures.map((feature, index) => (
+          {secondaryFeatures.map((feature: any, index) => (
             <Paper
               key={index}
               p="xl"
               radius="lg"
+              className="feature-card"
               style={{
                 backgroundColor: "var(--bg-card-secondary)", // Darker glass style from globals.css
                 border: "1px solid var(--border-subtle)",
@@ -125,19 +177,25 @@ export function SecondaryFeatures() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <ThemeIcon
-                size={50}
-                radius="md"
-                variant="light"
-                color="gray"
-                mb="md"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
-                }}
-              >
-                <Text style={{ fontSize: rem(26) }}>{feature.emoji}</Text>
-              </ThemeIcon>
+              <Group justify="space-between" align="start" mb="md">
+                <ThemeIcon
+                  size={50}
+                  radius="md"
+                  variant="light"
+                  color="gray"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                  }}
+                >
+                  <Text style={{ fontSize: rem(26) }}>{feature.emoji}</Text>
+                </ThemeIcon>
+                {feature.comingSoon && (
+                  <Badge variant="light" color="orange" size="sm">
+                    Coming Soon
+                  </Badge>
+                )}
+              </Group>
 
               <Text fz="lg" fw={600} mb="xs" c="white">
                 {feature.title}

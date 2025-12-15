@@ -11,7 +11,7 @@ import {
   TextInput,
   ThemeIcon,
 } from "@mantine/core";
-import { MessageSquare, MoreVertical, Search, Users } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 interface WhatsAppSidebarProps {
   contactName: string;
@@ -40,13 +40,13 @@ export function WhatsAppSidebar({ contactName }: WhatsAppSidebarProps) {
         <Avatar size="md" src="https://i.pravatar.cc/150?img=11" />
         <Group gap="sm">
           <ThemeIcon variant="transparent" c="dimmed">
-            <Users size={20} />
+            <Icon icon="tabler:users" width={20} />
           </ThemeIcon>
           <ThemeIcon variant="transparent" c="dimmed">
-            <MessageSquare size={20} />
+            <Icon icon="tabler:message-circle" width={20} />
           </ThemeIcon>
           <ThemeIcon variant="transparent" c="dimmed">
-            <MoreVertical size={20} />
+            <Icon icon="tabler:dots-vertical" width={20} />
           </ThemeIcon>
         </Group>
       </Group>
@@ -55,7 +55,7 @@ export function WhatsAppSidebar({ contactName }: WhatsAppSidebarProps) {
       <Box p="sm" style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
         <TextInput
           placeholder="Search"
-          leftSection={<Search size={14} />}
+          leftSection={<Icon icon="tabler:search" width={14} />}
           radius="md"
           styles={{
             input: {

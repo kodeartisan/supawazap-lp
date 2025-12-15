@@ -1,17 +1,7 @@
 "use client";
 
 import { ActionIcon, Box, Stack, Tooltip } from "@mantine/core";
-import {
-  Bolt,
-  CalendarClock,
-  Database,
-  EyeOff,
-  MessageSquare,
-  Radio,
-  Settings,
-  Zap,
-} from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 interface TabBarProps {
   activeTab: string;
@@ -31,43 +21,49 @@ export function TabBar({ activeTab, onTabChange }: TabBarProps) {
     >
       <Stack gap={4}>
         <TabIcon
-          icon={Radio}
+          icon="tabler:broadcast"
           label="Broadcast"
           active={activeTab === "broadcast"}
           onClick={() => onTabChange("broadcast")}
         />
         <TabIcon
-          icon={Bolt}
+          icon="tabler:robot"
           label="Workflow"
           active={activeTab === "workflow"}
           onClick={() => onTabChange("workflow")}
         />
         <TabIcon
-          icon={Zap}
+          icon="tabler:bolt"
           label="Quick Reply"
           active={activeTab === "quick-reply"}
           onClick={() => onTabChange("quick-reply")}
         />
         <TabIcon
-          icon={Database}
+          icon="tabler:address-book"
           label="CRM"
           active={activeTab === "crm"}
           onClick={() => onTabChange("crm")}
         />
         <TabIcon
-          icon={MessageSquare}
+          icon="tabler:message-plus"
           label="Direct"
           active={activeTab === "direct"}
           onClick={() => onTabChange("direct")}
         />
         <TabIcon
-          icon={CalendarClock}
+          icon="tabler:tools"
+          label="Tools"
+          active={activeTab === "tools"}
+          onClick={() => onTabChange("tools")}
+        />
+        <TabIcon
+          icon="tabler:history-toggle"
           label="Status"
           active={activeTab === "status"}
           onClick={() => onTabChange("status")}
         />
         <TabIcon
-          icon={EyeOff}
+          icon="tabler:eye-off"
           label="Privacy"
           active={activeTab === "privacy"}
           onClick={() => onTabChange("privacy")}
@@ -75,7 +71,7 @@ export function TabBar({ activeTab, onTabChange }: TabBarProps) {
       </Stack>
       <Stack mt="auto" gap={4}>
         <TabIcon
-          icon={Settings}
+          icon="tabler:settings"
           label="Settings"
           active={activeTab === "settings"}
           onClick={() => onTabChange("settings")}
@@ -87,23 +83,22 @@ export function TabBar({ activeTab, onTabChange }: TabBarProps) {
 
 // Update TabIcon to accept onClick
 interface TabIconProps {
-  icon: LucideIcon;
+  icon: string;
   active?: boolean;
   label: string;
   onClick?: () => void;
 }
 
-function TabIcon({ icon: Icon, active, label, onClick }: TabIconProps) {
+function TabIcon({ icon, active, label, onClick }: TabIconProps) {
   return (
-    <Tooltip label={label} position="left" withArrow>
+    <Tooltip label={label} position="right" withArrow>
       <ActionIcon
         variant="transparent"
-        size="xl"
-        color={active ? "emerald.4" : "dimmed"}
+        size={40}
         onClick={onClick}
         style={{
-          borderRadius: 12,
-          position: "relative",
+          color: active ? "#10b981" : "#94a3b8",
+          // Add a subtle background for active state if desired
           backgroundColor: active ? "rgba(16, 185, 129, 0.1)" : "transparent",
         }}
       >
@@ -121,7 +116,7 @@ function TabIcon({ icon: Icon, active, label, onClick }: TabIconProps) {
             }}
           />
         )}
-        <Icon size={22} strokeWidth={1.5} />
+        <Icon icon={icon} width={22} strokeWidth={1.5} />
       </ActionIcon>
     </Tooltip>
   );

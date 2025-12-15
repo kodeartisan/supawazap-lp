@@ -13,7 +13,7 @@ import {
   rem,
   Paper,
 } from "@mantine/core";
-import { Check } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 const features = [
   {
@@ -33,9 +33,23 @@ const features = [
     imagePosition: "right",
   },
   {
+    title: "Build Intelligent Chatbots in Minutes.",
+    description:
+      "Automate your follow-ups, lead qualification, and customer support with our Visual Builder. Let Supawazap work while you sleep.",
+    points: [
+      "Trigger flows based on Incoming Message Keywords, Exact Match, or Any Message", //
+      "Auto actions: Reply, Add/Remove Tags, Update CRM Fields, or Archive Chat", //
+      "Personal Trigger scope for private chats or specific Group IDs", //
+      "Dynamic Variables: Insert {sender_name}, {date}, {time} into automated replies", //
+      "Rich Media Replies: Send Images, Videos, Audio, or Documents automatically", //
+      "Wait & Delay steps to create natural conversational pacing", //,
+    ],
+    imagePosition: "left",
+  },
+  {
     title: "Smart Broadcast & Bulk Sender",
     description:
-      "Stop gambling with your business account. Our proprietary Human Simulation Engine mimics real typing speed, adds random delays, and uses smart batching to keep your number safe.",
+      "Our proprietary Human Simulation Engine mimics real typing speed, adds random delays, and uses smart batching to keep your number safe.",
     points: [
       "Smart Batching: Automatically splits large lists with rest periods.", //
       "Typing Presence: Shows 'Typing...' status before sending for a natural feel.", //
@@ -45,7 +59,7 @@ const features = [
       "Post-Broadcast Automation: Auto-tag or Archive chat based on delivery status", //
       "Automatic Number Validation before sending to prevent errors", //
     ],
-    imagePosition: "left",
+    imagePosition: "right",
   },
   {
     title: "A Database That Adapts to Your Business.",
@@ -64,31 +78,6 @@ const features = [
   },
 
   {
-    title: "Build Intelligent Chatbots in Minutes, No Coding Required.",
-    description:
-      "Automate your follow-ups, lead qualification, and customer support with our Visual Builder. Let Supawazap work while you sleep.",
-    points: [
-      "Trigger flows based on Incoming Message Keywords, Exact Match, or Any Message", //
-      "Auto actions: Reply, Add/Remove Tags, Update CRM Fields, or Archive Chat", //
-      "Personal Trigger scope for private chats or specific Group IDs", //
-      "Dynamic Variables: Insert {sender_name}, {date}, {time} into automated replies", //
-      "Rich Media Replies: Send Images, Videos, Audio, or Documents automatically", //
-      "Wait & Delay steps to create natural conversational pacing", //,
-    ],
-    imagePosition: "right",
-  },
-  {
-    title: "Smart Segments",
-    description:
-      "Create dynamic contact lists that automatically update based on your rules.",
-    points: [
-      "Filter by Tags, Name, Number, or Custom Field values", //
-      "Combine rules with AND/OR logic operators", //
-      "Use segments as targets for Broadcast campaigns", //
-    ],
-    imagePosition: "left",
-  },
-  {
     title: "Automate Your Campaign Follow-up",
     description:
       "Don't just send messages—act on the results. Supawazap automatically cleans your list and tags users based on delivery status.",
@@ -100,7 +89,7 @@ const features = [
 export function Features() {
   return (
     <Box py={100} id="features">
-      <Container size="xl">
+      <Container size="lg">
         <Stack gap={120}>
           {features.map((feature, index) => (
             <Group
@@ -115,10 +104,15 @@ export function Features() {
             >
               {/* Text Content */}
               <Stack style={{ flex: 1 }}>
-                <Title order={2} fz={48} fw={800} lh={1.1}>
+                <Title order={2} style={{ fontSize: rem(42), fontWeight: 700 }}>
                   {feature.title}
                 </Title>
-                <Text c="dimmed" size="lg" mt="md">
+                <Text
+                  c="dimmed"
+                  size="lg"
+                  mt="md"
+                  style={{ fontSize: rem(20) }}
+                >
                   {feature.description}
                 </Text>
 
@@ -128,7 +122,7 @@ export function Features() {
                   size="lg"
                   icon={
                     <ThemeIcon color="emerald" size={24} radius="xl">
-                      <Check size={14} />
+                      <Icon icon="tabler:check" width={14} />
                     </ThemeIcon>
                   }
                 >
@@ -240,7 +234,7 @@ export function Features() {
                   size="md"
                   icon={
                     <ThemeIcon color="emerald" size={20} radius="xl">
-                      <Check size={12} />
+                      <Icon icon="tabler:check" width={12} />
                     </ThemeIcon>
                   }
                 >

@@ -21,28 +21,19 @@ import {
   TextInput,
   ThemeIcon,
 } from "@mantine/core";
-import {
-  Check,
-  Copy,
-  ExternalLink,
-  FileText,
-  Settings,
-  Trash2,
-  UserCircle,
-  X,
-} from "lucide-react";
+import { Icon } from "@iconify/react";
 
 // Mock data
 const CONTACT_DATA = {
-  name: "Budi Santoso",
-  number: "6281234567890",
+  name: "John Doe",
+  number: "15550123456",
   tags: ["VIP", "Lead", "Negotiation"],
 };
 
 const CUSTOM_FIELDS_DATA = [
-  { id: 1, name: "Company", type: "text", value: "Tech Corp Indonesia" },
-  { id: 2, name: "Deal Value", type: "number", value: 5000000 },
-  { id: 3, name: "LinkedIn", type: "url", value: "linkedin.com/in/budi" },
+  { id: 1, name: "Company", type: "text", value: "Acme Corp USA" },
+  { id: 2, name: "Deal Value", type: "number", value: 50000 },
+  { id: 3, name: "LinkedIn", type: "url", value: "linkedin.com/in/johndoe" },
   {
     id: 4,
     name: "Lead Source",
@@ -108,7 +99,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
           thousandSeparator=","
           leftSection={
             <Text size="xs" c="dimmed">
-              Rp
+              $
             </Text>
           }
           styles={inputStyles}
@@ -121,7 +112,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
           defaultValue={field.value}
           rightSection={
             <ActionIcon size="xs" variant="transparent" c="blue.4">
-              <ExternalLink size={12} />
+              <Icon icon="tabler:external-link" width={12} />
             </ActionIcon>
           }
           styles={inputStyles}
@@ -177,9 +168,13 @@ const FieldRenderer = ({ field }: { field: any }) => {
             size="sm"
             thumbIcon={
               field.value ? (
-                <Check size={10} color="var(--mantine-color-emerald-6)" />
+                <Icon
+                  icon="tabler:check"
+                  width={10}
+                  color="var(--mantine-color-emerald-6)"
+                />
               ) : (
-                <X size={10} color="gray" />
+                <Icon icon="tabler:x" width={10} color="gray" />
               )
             }
           />
@@ -219,7 +214,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
             }}
           >
             <ThemeIcon variant="light" color="blue" size="md">
-              <FileText size={14} />
+              <Icon icon="tabler:file-text" width={14} />
             </ThemeIcon>
             <Stack gap={0} style={{ flex: 1 }}>
               <Text size="xs" truncate>
@@ -230,7 +225,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
               </Text>
             </Stack>
             <ActionIcon variant="subtle" color="red" size="sm">
-              <Trash2 size={12} />
+              <Icon icon="tabler:trash" width={12} />
             </ActionIcon>
           </Group>
         </Stack>
@@ -272,7 +267,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
         <Group justify="space-between" align="center">
           <Group gap={10}>
             <ThemeIcon variant="light" size="lg" color="emerald" radius="md">
-              <UserCircle size={20} />
+              <Icon icon="tabler:user-circle" width={20} />
             </ThemeIcon>
             <Text
               fw={700}
@@ -287,7 +282,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
             </Text>
           </Group>
           <ActionIcon variant="subtle" color="gray" size="sm">
-            <X size={16} />
+            <Icon icon="tabler:x" width={16} />
           </ActionIcon>
         </Group>
 
@@ -304,11 +299,17 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
             { value: "notes", label: "Notes" },
             { value: "tasks", label: "Tasks" },
           ]}
+          className="crm-tabs"
           styles={{
             root: { backgroundColor: "rgba(255, 255, 255, 0.05)" },
             label: { color: "#94a3b8" },
           }}
         />
+        <style jsx global>{`
+          .crm-tabs .mantine-SegmentedControl-label[data-active] {
+            color: #ffffff !important;
+          }
+        `}</style>
       </Stack>
 
       {/* Form Content */}
@@ -317,7 +318,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
           {/* Identity */}
           <Group align="flex-start" wrap="nowrap" gap="sm">
             <Avatar size="lg" radius="xl" color="emerald" variant="filled">
-              BS
+              JD
             </Avatar>
             <Stack gap={6} style={{ flex: 1 }}>
               <TextInput
@@ -330,7 +331,13 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
                 label="Number"
                 defaultValue={CONTACT_DATA.number}
                 variant="filled"
-                rightSection={<Copy size={12} style={{ opacity: 0.5 }} />}
+                rightSection={
+                  <Icon
+                    icon="tabler:copy"
+                    width={12}
+                    style={{ opacity: 0.5 }}
+                  />
+                }
                 styles={inputStyles}
               />
             </Stack>
@@ -383,7 +390,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
           variant="outline"
           color="emerald"
           size="xs"
-          leftSection={<Settings size={14} />}
+          leftSection={<Icon icon="tabler:settings" width={14} />}
           style={{
             borderColor: "rgba(16, 185, 129, 0.3)",
             color: "#34d399",

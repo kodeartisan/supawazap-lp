@@ -6,10 +6,9 @@ import { useRef, useState, MouseEvent } from "react";
 import { WhatsAppSidebar } from "./WhatsAppSidebar";
 import { ChatArea } from "./ChatArea";
 import { CRMSidebar } from "./CRMSidebar";
-import { PrivacySidebar } from "./PrivacySidebar";
 import { TabBar } from "./TabBar";
 
-const CONTACT_NAME = "Budi Santoso";
+const CONTACT_NAME = "John Doe";
 
 export function BrowserMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -122,19 +121,10 @@ export function BrowserMockup() {
             {/* Right: Supawazap Extension Panel */}
             <Group gap={0} h="100%" align="flex-start" bg="transparent">
               {/* Content Panel based on activeMainTab */}
-              {activeMainTab === "crm" ? (
-                <CRMSidebar
-                  activeTab={activeCRMTab}
-                  onTabChange={setActiveCRMTab}
-                />
-              ) : activeMainTab === "privacy" ? (
-                <PrivacySidebar onClose={() => setActiveMainTab("crm")} />
-              ) : (
-                <CRMSidebar
-                  activeTab={activeCRMTab}
-                  onTabChange={setActiveCRMTab}
-                />
-              )}
+              <CRMSidebar
+                activeTab={activeCRMTab}
+                onTabChange={setActiveCRMTab}
+              />
 
               {/* Vertical Tab Bar */}
               <TabBar

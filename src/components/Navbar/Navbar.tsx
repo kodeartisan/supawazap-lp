@@ -60,7 +60,7 @@ export function Navbar() {
       key={link.label}
       onClick={() => setActive(link.link)}
       style={{
-        fontSize: rem(14),
+        fontSize: rem(18),
         fontWeight: 500,
         color:
           active === link.link
@@ -71,12 +71,16 @@ export function Navbar() {
         borderRadius: "8px",
       }}
       onMouseEnter={(e) => {
-        if (active !== link.link)
+        if (active !== link.link) {
           e.currentTarget.style.color = "var(--text-primary)";
+          e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+        }
       }}
       onMouseLeave={(e) => {
-        if (active !== link.link)
+        if (active !== link.link) {
           e.currentTarget.style.color = "var(--text-secondary)";
+          e.currentTarget.style.backgroundColor = "transparent";
+        }
       }}
     >
       {link.label}
@@ -95,7 +99,7 @@ export function Navbar() {
         borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
-      <Container size="xl" h={64}>
+      <Container size="xl" h={80}>
         <Group justify="space-between" h="100%">
           <Logo />
           <Group gap={8} visibleFrom="sm">

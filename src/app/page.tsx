@@ -1,7 +1,9 @@
 import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
+import { CTA } from "@/components/CTA";
 import { Features } from "@/components/Features/Features";
 import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Navbar } from "@/components/Navbar/Navbar";
+import { Testimonials } from "@/components/Testimonials";
 import { Typewriter } from "@/components/Typewriter";
 import {
   Avatar,
@@ -69,18 +71,6 @@ export default function Home() {
 
       <Container size="xl" mt={60} style={{ position: "relative", zIndex: 1 }}>
         <Stack gap="xl" align="center">
-          {/* Badge: New Version */}
-          <Badge
-            variant="outline"
-            color="emerald"
-            size="lg"
-            radius="xl"
-            styles={{ root: { textTransform: "none" } }}
-            leftSection={<Zap size={14} fill="currentColor" />}
-          >
-            v2.0 is now live
-          </Badge>
-
           {/* Hero Title */}
           <Title
             order={1}
@@ -123,10 +113,10 @@ export default function Home() {
             size="xl"
             ta="center"
             maw={700}
-            style={{ fontSize: rem(20), lineHeight: 1.6 }}
+            style={{ fontSize: rem(28), lineHeight: 1.6 }}
           >
             The only local-first extension that combines Smart Broadcasting,
-            Visual Workflow Automation, and Deep CRM features. No monthly fees.
+            Visual Workflow Automation, and Deep CRM features.
           </Text>
 
           {/* CTA Group */}
@@ -146,21 +136,6 @@ export default function Home() {
             >
               Add to Chrome - It's Free
             </Button>
-            <Button
-              size="xl"
-              radius="full"
-              variant="default"
-              color="gray"
-              style={{
-                height: rem(60),
-                fontSize: rem(18),
-                backgroundColor: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                color: "white",
-              }}
-            >
-              View Demo
-            </Button>
           </Group>
 
           {/* 2. SOCIAL PROOF / AVATAR PILE */}
@@ -173,7 +148,7 @@ export default function Home() {
                 <Avatar src="https://i.pravatar.cc/100?img=33" radius="xl" />
                 <Avatar src="https://i.pravatar.cc/100?img=5" radius="xl" />
                 <Avatar radius="xl" color="emerald">
-                  +10k
+                  +100
                 </Avatar>
               </AvatarGroup>
               <Stack gap={0} ml={8}>
@@ -185,7 +160,7 @@ export default function Home() {
                   <Star size={16} fill="#FACC15" color="#FACC15" />
                 </Group>
                 <Text size="xs" c="dimmed" fw={500}>
-                  Trusted by 10,000+ businesses
+                  Trusted by 100+
                 </Text>
               </Stack>
             </Group>
@@ -197,6 +172,8 @@ export default function Home() {
 
       <Features />
       <SecondaryFeatures />
+      <Testimonials />
+      <CTA />
     </Box>
   );
 }

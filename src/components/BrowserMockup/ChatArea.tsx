@@ -11,42 +11,11 @@ import {
   ThemeIcon,
   Tooltip,
 } from "@mantine/core";
-import { Bolt, CheckCheck, MoreVertical, Search } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 interface ChatAreaProps {
   contactName: string;
 }
-
-// Custom Icons
-const IconPlus = () => (
-  <svg
-    viewBox="0 0 24 24"
-    width="24"
-    height="24"
-    stroke="currentColor"
-    fill="none"
-  >
-    <path d="M12 5v14M5 12h14" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
-const IconMicrophone = () => (
-  <svg
-    viewBox="0 0 24 24"
-    width="20"
-    height="20"
-    stroke="currentColor"
-    fill="none"
-  >
-    <path
-      d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
-      strokeWidth="2"
-    />
-    <path d="M19 10v2a7 7 0 0 1-14 0v-2" strokeWidth="2" />
-    <line x1="12" y1="19" x2="12" y2="23" strokeWidth="2" />
-    <line x1="8" y1="23" x2="16" y2="23" strokeWidth="2" />
-  </svg>
-);
 
 export function ChatArea({ contactName }: ChatAreaProps) {
   return (
@@ -64,7 +33,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
       >
         <Group>
           <Avatar radius="xl" color="emerald" size="sm">
-            BS
+            JD
           </Avatar>
           <Stack gap={0}>
             <Text size="sm" fw={600} c="white">
@@ -76,8 +45,8 @@ export function ChatArea({ contactName }: ChatAreaProps) {
           </Stack>
         </Group>
         <Group gap="xs">
-          <Search size={18} color="#8696a0" />
-          <MoreVertical size={18} color="#8696a0" />
+          <Icon icon="tabler:search" width={18} color="#8696a0" />
+          <Icon icon="tabler:dots-vertical" width={18} color="#8696a0" />
         </Group>
       </Group>
 
@@ -116,8 +85,8 @@ export function ChatArea({ contactName }: ChatAreaProps) {
               }}
             >
               <Text size="sm">
-                Hello! I am interested in your CRM services. Can you send me the
-                price list?
+                Hi! I noticed that I can send bulk messages using Supawazap. Is
+                it safe for my number?
               </Text>
               <Text
                 size="xs"
@@ -144,19 +113,88 @@ export function ChatArea({ contactName }: ChatAreaProps) {
               }}
             >
               <Text size="sm">
-                Sure, Budi! I've attached the document. Let me know if you need
-                anything else.
+                Absolutely, John! We use 'Smart Batching' and random delays to
+                mimic human behavior, keeping your account safe.
               </Text>
               <Group justify="flex-end" gap={4} mt={4}>
                 <Text size="xs" style={{ opacity: 0.7, fontSize: 10 }}>
                   10:31 AM
                 </Text>
-                <CheckCheck size={12} style={{ opacity: 0.7 }} />
+                <Icon
+                  icon="tabler:checks"
+                  width={12}
+                  style={{ opacity: 0.7 }}
+                />
               </Group>
             </Paper>
           </Group>
         </Stack>
       </Box>
+
+      {/* Extension Menu Overlay */}
+      <Stack
+        gap="xs"
+        style={{
+          position: "absolute",
+          bottom: 70,
+          left: 10,
+          zIndex: 10,
+        }}
+      >
+        <Tooltip label="Quick Reply" position="right">
+          <ActionIcon
+            variant="filled"
+            size={28}
+            radius="xl"
+            color="emerald"
+            style={{ boxShadow: "0 4px 6px rgba(0,0,0,0.3)" }}
+          >
+            <Icon icon="tabler:bolt" width={15} />
+          </ActionIcon>
+        </Tooltip>
+
+        <Tooltip label="Copy Number" position="right">
+          <ActionIcon
+            variant="filled"
+            size={28}
+            radius="xl"
+            color="emerald"
+            style={{
+              boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
+            }}
+          >
+            <Icon icon="tabler:copy" width={15} />
+          </ActionIcon>
+        </Tooltip>
+
+        <Tooltip label="Contact Profile" position="right">
+          <ActionIcon
+            variant="filled"
+            size={28}
+            radius="xl"
+            color="emerald"
+            style={{
+              boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
+            }}
+          >
+            <Icon icon="tabler:address-book" width={15} />
+          </ActionIcon>
+        </Tooltip>
+
+        <Tooltip label="Schedule Message" position="right">
+          <ActionIcon
+            variant="filled"
+            size={28}
+            radius="xl"
+            color="emerald"
+            style={{
+              boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
+            }}
+          >
+            <Icon icon="tabler:calendar-time" width={15} />
+          </ActionIcon>
+        </Tooltip>
+      </Stack>
 
       {/* Input Area */}
       <Box
@@ -166,7 +204,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
         style={{ display: "flex", alignItems: "center", gap: 12 }}
       >
         <ThemeIcon variant="transparent" color="gray">
-          <IconPlus />
+          <Icon icon="tabler:plus" width={24} />
         </ThemeIcon>
         <Paper
           style={{
@@ -186,12 +224,12 @@ export function ChatArea({ contactName }: ChatAreaProps) {
           <Text size="sm">Type a message</Text>
           <Tooltip label="Quick Reply" withArrow>
             <ActionIcon variant="light" color="emerald" radius="xl" size="sm">
-              <Bolt size={14} />
+              <Icon icon="tabler:bolt" width={14} />
             </ActionIcon>
           </Tooltip>
         </Paper>
         <ThemeIcon variant="transparent" color="gray">
-          <IconMicrophone />
+          <Icon icon="tabler:microphone" width={20} />
         </ThemeIcon>
       </Box>
     </Stack>
