@@ -6,6 +6,7 @@ import { useRef, useState, MouseEvent } from "react";
 import { WhatsAppSidebar } from "./WhatsAppSidebar";
 import { ChatArea } from "./ChatArea";
 import { CRMSidebar } from "./CRMSidebar";
+import { PrivacySidebar } from "./PrivacySidebar";
 import { TabBar } from "./TabBar";
 
 const CONTACT_NAME = "Budi Santoso";
@@ -14,7 +15,8 @@ export function BrowserMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 10, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [activeTab, setActiveTab] = useState("profile");
+  const [activeCRMTab, setActiveCRMTab] = useState("profile");
+  const [activeMainTab, setActiveMainTab] = useState("crm");
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -119,11 +121,26 @@ export function BrowserMockup() {
 
             {/* Right: Supawazap Extension Panel */}
             <Group gap={0} h="100%" align="flex-start" bg="transparent">
-              {/* CRM Contact Panel */}
-              <CRMSidebar activeTab={activeTab} onTabChange={setActiveTab} />
+              {/* Content Panel based on activeMainTab */}
+              {activeMainTab === "crm" ? (
+                <CRMSidebar
+                  activeTab={activeCRMTab}
+                  onTabChange={setActiveCRMTab}
+                />
+              ) : activeMainTab === "privacy" ? (
+                <PrivacySidebar onClose={() => setActiveMainTab("crm")} />
+              ) : (
+                <CRMSidebar
+                  activeTab={activeCRMTab}
+                  onTabChange={setActiveCRMTab}
+                />
+              )}
 
               {/* Vertical Tab Bar */}
-              <TabBar />
+              <TabBar
+                activeTab={activeMainTab}
+                onTabChange={setActiveMainTab}
+              />
             </Group>
           </Box>
         </Paper>
