@@ -74,6 +74,7 @@ export default function Home() {
           {/* Hero Title */}
           <Title
             order={1}
+            className="text-gradient"
             style={{
               fontSize: rem(64),
               fontWeight: 800,

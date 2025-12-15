@@ -8,11 +8,12 @@ import {
   Text,
   ThemeIcon,
   Title,
-  Paper,
   rem,
   Badge,
   Group,
 } from "@mantine/core";
+import { SpotlightCard } from "../SpotlightCard"; // Import komponen baru
+import { PremiumCard } from "../PremiumCard";
 
 const secondaryFeatures = [
   {
@@ -117,7 +118,7 @@ const secondaryFeatures = [
   {
     emoji: "🌐",
     title: "AI Translate",
-    description: "Break language barriers. Translation for incoming  messages.",
+    description: "Break language barriers. Translation for incoming messages.",
     comingSoon: true,
   },
   {
@@ -134,13 +135,6 @@ export function SecondaryFeatures() {
     <Box py={100} style={{ position: "relative", zIndex: 1 }}>
       <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
         <Stack align="center" mb={{ base: 40, md: 80 }}>
-          <Text
-            c="emerald"
-            fw={700}
-            style={{ textTransform: "uppercase", letterSpacing: "2px" }}
-          >
-            Powerful Extras
-          </Text>
           <Title
             order={2}
             ta="center"
@@ -155,55 +149,50 @@ export function SecondaryFeatures() {
           </Text>
         </Stack>
 
-        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={30}>
-          {secondaryFeatures.map((feature: any, index) => (
-            <Paper
-              key={index}
-              p="xl"
-              radius="lg"
-              className="feature-card"
-              style={{
-                backgroundColor: "var(--bg-card-secondary)", // Darker glass style from globals.css
-                border: "1px solid var(--border-subtle)",
-                transition: "all 0.3s ease",
-                cursor: "default",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "var(--brand-emerald-500)";
-                e.currentTarget.style.transform = "translateY(-5px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "var(--border-subtle)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              <Group justify="space-between" align="start" mb="md">
-                <ThemeIcon
-                  size={50}
-                  radius="md"
-                  variant="light"
-                  color="gray"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <Text style={{ fontSize: rem(26) }}>{feature.emoji}</Text>
-                </ThemeIcon>
-                {feature.comingSoon && (
-                  <Badge variant="light" color="orange" size="sm">
-                    Coming Soon
-                  </Badge>
-                )}
-              </Group>
-
-              <Text fz="lg" fw={600} mb="xs" c="white">
-                {feature.title}
-              </Text>
-              <Text c="dimmed" size="sm" lh={1.6}>
-                {feature.description}
-              </Text>
-            </Paper>
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={20}>
+          {secondaryFeatures.map((feature: any, index: number) => (
+            // Implementasi SpotlightCard
+            <PremiumCard key={index}>
+              <Stack justify="space-between" h="100%" gap="sm">
+                <Box>
+                  <Group justify="space-between" align="start" mb="md">
+                    <ThemeIcon
+                      size={50}
+                      radius="md"
+                      variant="light"
+                      color="gray"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "1px solid rgba(255, 255, 255, 0.1)",
+                        color: "#fff",
+                      }}
+                    >
+                      <Text style={{ fontSize: rem(26) }}>{feature.emoji}</Text>
+                    </ThemeIcon>
+                    {feature.comingSoon && (
+                      <Badge
+                        variant="light"
+                        color="orange"
+                        size="sm"
+                        style={{
+                          backgroundColor: "rgba(251, 146, 60, 0.1)",
+                          color: "#fb923c",
+                          border: "1px solid rgba(251, 146, 60, 0.2)",
+                        }}
+                      >
+                        Coming Soon
+                      </Badge>
+                    )}
+                  </Group>
+                  <Text fz="lg" fw={600} mb="xs" c="white">
+                    {feature.title}
+                  </Text>
+                  <Text c="dimmed" size="sm" lh={1.6}>
+                    {feature.description}
+                  </Text>
+                </Box>
+              </Stack>
+            </PremiumCard>
           ))}
         </SimpleGrid>
       </Container>

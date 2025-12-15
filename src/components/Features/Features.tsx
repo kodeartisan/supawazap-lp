@@ -90,6 +90,21 @@ export function Features() {
   return (
     <Box py={100} id="features">
       <Container size="lg">
+        <Stack align="center" mb={{ base: 60, md: 100 }}>
+          <Title
+            order={2}
+            ta="center"
+            style={{ fontSize: rem(42) }}
+            className="text-gradient"
+          >
+            Automate. Organize. Scale.
+          </Title>
+          <Text c="dimmed" ta="center" maw={600} size="lg">
+            Built for power users who need more than just a chat app. Experience
+            the next evolution of WhatsApp Web.
+          </Text>
+        </Stack>
+
         <Stack gap={120}>
           {features.map((feature, index) => (
             <Group
@@ -104,7 +119,7 @@ export function Features() {
             >
               {/* Text Content */}
               <Stack style={{ flex: 1 }}>
-                <Title order={2} style={{ fontSize: rem(42), fontWeight: 700 }}>
+                <Title order={2} style={{ fontSize: rem(35), fontWeight: 700 }}>
                   {feature.title}
                 </Title>
                 <Text

@@ -58,20 +58,13 @@ export function Testimonials() {
 
       <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
         <Stack align="center" mb={{ base: 40, md: 80 }}>
-          <Text
-            c="emerald"
-            fw={700}
-            style={{ textTransform: "uppercase", letterSpacing: "2px" }}
-          >
-            Community Trust
-          </Text>
           <Title
             order={2}
             ta="center"
             style={{ fontSize: rem(42) }}
             className="text-gradient"
           >
-            Loved by 2,000+ Professionals
+            Loved by 100+ Professionals
           </Title>
           <Text c="dimmed" ta="center" maw={600} size="lg">
             Join the community of marketers, agents, and business owners who
@@ -137,11 +130,6 @@ export function Testimonials() {
           transform: translateY(-5px);
           box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.1);
           border-color: rgba(16, 185, 129, 0.2) !important;
-        }
-        .text-gradient {
-          background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
         }
       `}</style>
     </Box>
