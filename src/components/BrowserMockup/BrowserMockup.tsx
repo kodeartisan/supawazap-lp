@@ -56,7 +56,7 @@ export function BrowserMockup() {
   return (
     <Box
       ref={containerRef}
-      mt={60}
+      mt={10}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{

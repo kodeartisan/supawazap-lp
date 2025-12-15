@@ -79,7 +79,7 @@ export function Navbar() {
       key={link.label}
       onClick={() => setActive(link.link)}
       style={{
-        fontSize: rem(14),
+        fontSize: rem(16),
         fontWeight: 500,
         color:
           active === link.link
@@ -113,7 +113,7 @@ export function Navbar() {
         component="header"
         style={{
           position: "fixed",
-          top: scrolled ? 20 : 32, // Moves up slightly when scrolled
+          top: scrolled ? 20 : 16, // Moves up slightly when scrolled
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 100,

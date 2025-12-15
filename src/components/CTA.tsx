@@ -9,7 +9,8 @@ import {
   Title,
   rem,
 } from "@mantine/core";
-import { Chrome, Zap } from "lucide-react";
+import { Icon } from "@iconify/react";
+import { Zap } from "lucide-react";
 
 export function CTA() {
   return (
@@ -61,11 +62,9 @@ export function CTA() {
             <Group>
               <Button
                 size="xl"
-                variant="white"
-                color="dark"
-                c="emerald.9"
-                leftSection={<Chrome size={20} />}
-                style={{ fontWeight: 700 }}
+                radius="xl"
+                className="btn-primary-action"
+                leftSection={<Icon icon="logos:chrome" fontSize={24} />}
               >
                 Add to Chrome
               </Button>

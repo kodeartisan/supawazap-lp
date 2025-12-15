@@ -5,6 +5,7 @@ import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Testimonials } from "@/components/Testimonials";
 import { Typewriter } from "@/components/Typewriter";
+import { Icon } from "@iconify/react";
 import {
   Avatar,
   Box,
@@ -15,24 +16,8 @@ import {
   Text,
   Title,
   rem,
-  Paper,
-  Badge,
-  ThemeIcon,
-  SimpleGrid,
-  Skeleton,
   AvatarGroup,
 } from "@mantine/core";
-import {
-  Chrome,
-  Star,
-  Zap,
-  MessageSquare,
-  Users,
-  BarChart3,
-  Search,
-  MoreVertical,
-  CheckCheck,
-} from "lucide-react";
 
 export default function Home() {
   return (
@@ -69,7 +54,7 @@ export default function Home() {
 
       <Navbar />
 
-      <Container size="xl" mt={60} style={{ position: "relative", zIndex: 1 }}>
+      <Container size="xl" mt={125} style={{ position: "relative", zIndex: 1 }}>
         <Stack gap="xl" align="center">
           {/* Hero Title */}
           <Title
@@ -121,51 +106,23 @@ export default function Home() {
           </Text>
 
           {/* CTA Group */}
-          <Group mt="md" gap="md" justify="center">
+          <Stack align="center" gap="xs" mt="md">
             <Button
               size="xl"
-              radius="full"
-              color="emerald"
-              variant="filled"
-              leftSection={<Chrome size={24} />}
+              radius="xl"
+              className="btn-primary-action"
+              leftSection={<Icon icon="logos:chrome" fontSize={24} />}
               style={{
-                boxShadow: "0 0 30px rgba(16, 185, 129, 0.4)",
-                transition: "transform 0.2s ease",
                 height: rem(60),
                 fontSize: rem(18),
               }}
             >
               Add to Chrome - It's Free
             </Button>
-          </Group>
-
-          {/* 2. SOCIAL PROOF / AVATAR PILE */}
-          {/* Replaces simple text with visual avatars and stars */}
-          <Group gap="xl" mt="lg" align="center" justify="center">
-            <Group gap="xs">
-              <AvatarGroup spacing="sm">
-                <Avatar src="https://i.pravatar.cc/100?img=12" radius="xl" />
-                <Avatar src="https://i.pravatar.cc/100?img=47" radius="xl" />
-                <Avatar src="https://i.pravatar.cc/100?img=33" radius="xl" />
-                <Avatar src="https://i.pravatar.cc/100?img=5" radius="xl" />
-                <Avatar radius="xl" color="emerald">
-                  +100
-                </Avatar>
-              </AvatarGroup>
-              <Stack gap={0} ml={8}>
-                <Group gap={4}>
-                  <Star size={16} fill="#FACC15" color="#FACC15" />
-                  <Star size={16} fill="#FACC15" color="#FACC15" />
-                  <Star size={16} fill="#FACC15" color="#FACC15" />
-                  <Star size={16} fill="#FACC15" color="#FACC15" />
-                  <Star size={16} fill="#FACC15" color="#FACC15" />
-                </Group>
-                <Text size="xs" c="dimmed" fw={500}>
-                  Trusted by 100+
-                </Text>
-              </Stack>
-            </Group>
-          </Group>
+            <Text size="sm" c="dimmed" fw={500}>
+              No credit card required • No sign up needed
+            </Text>
+          </Stack>
         </Stack>
 
         <BrowserMockup />
