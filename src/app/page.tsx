@@ -1,8 +1,10 @@
+import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { Features } from "@/components/Features/Features";
 import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Typewriter } from "@/components/Typewriter";
 import {
+  Avatar,
   Box,
   Button,
   Container,
@@ -11,29 +13,79 @@ import {
   Text,
   Title,
   rem,
+  Paper,
+  Badge,
+  ThemeIcon,
+  SimpleGrid,
+  Skeleton,
+  AvatarGroup,
 } from "@mantine/core";
-import { CheckCircle, Chrome, PlayCircle, Star } from "lucide-react";
+import {
+  Chrome,
+  Star,
+  Zap,
+  MessageSquare,
+  Users,
+  BarChart3,
+  Search,
+  MoreVertical,
+  CheckCheck,
+} from "lucide-react";
 
 export default function Home() {
   return (
     <Box
       pb={100}
       style={{
-        backgroundColor: "#030712", // Darker slate/gray
+        backgroundColor: "#030712",
+        // Grid pattern background
         backgroundImage:
-          "linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
+          "linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
         backgroundSize: "32px 32px",
         minHeight: "100vh",
         color: "white",
+        position: "relative",
+        overflow: "hidden", // Prevents spotlight overflow scrollbars
       }}
     >
+      {/* 1. SPOTLIGHT EFFECT */}
+      {/* A large radial gradient positioned behind the hero content */}
+      <Box
+        style={{
+          position: "absolute",
+          top: "-20%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "140%",
+          height: "1000px",
+          background:
+            "radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(3, 7, 18, 0) 60%)",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      />
+
       <Navbar />
-      <Container size="xl" mt={80}>
-        <Stack gap="xl" maw={900} mx="auto" align="center">
+
+      <Container size="xl" mt={60} style={{ position: "relative", zIndex: 1 }}>
+        <Stack gap="xl" align="center">
+          {/* Badge: New Version */}
+          <Badge
+            variant="outline"
+            color="emerald"
+            size="lg"
+            radius="xl"
+            styles={{ root: { textTransform: "none" } }}
+            leftSection={<Zap size={14} fill="currentColor" />}
+          >
+            v2.0 is now live
+          </Badge>
+
+          {/* Hero Title */}
           <Title
             order={1}
             style={{
-              fontSize: rem(58),
+              fontSize: rem(64),
               fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
@@ -53,10 +105,10 @@ export default function Home() {
               <Typewriter
                 words={[
                   "Sales Machine",
-                  "Revenue-Generating CRM",
+                  "Revenue Engine",
                   "24/7 Auto-Reply",
-                  "Smart Broadcasting",
-                  "Workflow Automation",
+                  "Smart Broadcaster",
+                  "Workflow Automator",
                 ]}
                 typingSpeed={75}
                 deletingSpeed={50}
@@ -65,77 +117,84 @@ export default function Home() {
             </Text>
           </Title>
 
+          {/* Subtitle */}
           <Text
             c="dimmed"
             size="xl"
             ta="center"
-            maw={800}
+            maw={700}
             style={{ fontSize: rem(20), lineHeight: 1.6 }}
           >
             The only local-first extension that combines Smart Broadcasting,
-            Visual Workflow Automation, and Deep CRM features. No monthly fees,
-            no data leaks.
+            Visual Workflow Automation, and Deep CRM features. No monthly fees.
           </Text>
 
+          {/* CTA Group */}
           <Group mt="md" gap="md" justify="center">
             <Button
               size="xl"
-              radius="md"
+              radius="full"
               color="emerald"
               variant="filled"
               leftSection={<Chrome size={24} />}
               style={{
-                boxShadow: "0 0 25px rgba(16, 185, 129, 0.5)",
+                boxShadow: "0 0 30px rgba(16, 185, 129, 0.4)",
                 transition: "transform 0.2s ease",
+                height: rem(60),
+                fontSize: rem(18),
               }}
             >
-              Install for free
+              Add to Chrome - It's Free
             </Button>
             <Button
               size="xl"
-              radius="md"
+              radius="full"
               variant="default"
               color="gray"
-              leftSection={<PlayCircle size={24} />}
               style={{
+                height: rem(60),
+                fontSize: rem(18),
                 backgroundColor: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 color: "white",
               }}
             >
-              See 60-sec demo
+              View Demo
             </Button>
           </Group>
 
-          <Group gap="xl" mt="xl" align="center" justify="center">
-            <Group gap={6}>
-              <Star fill="#FACC15" color="#FACC15" size={20} />
-              <Text fw={600} size="sm">
-                4.9 average
-              </Text>
-            </Group>
-            <Box
-              w={4}
-              h={4}
-              style={{ borderRadius: "50%", background: "#4B5563" }}
-            />
-            <Text fw={600} size="sm">
-              10,000+ active users
-            </Text>
-            <Box
-              w={4}
-              h={4}
-              style={{ borderRadius: "50%", background: "#4B5563" }}
-            />
-            <Group gap={6}>
-              <CheckCircle color="#10B981" size={20} />
-              <Text fw={600} size="sm">
-                Local-First Security
-              </Text>
+          {/* 2. SOCIAL PROOF / AVATAR PILE */}
+          {/* Replaces simple text with visual avatars and stars */}
+          <Group gap="xl" mt="lg" align="center" justify="center">
+            <Group gap="xs">
+              <AvatarGroup spacing="sm">
+                <Avatar src="https://i.pravatar.cc/100?img=12" radius="xl" />
+                <Avatar src="https://i.pravatar.cc/100?img=47" radius="xl" />
+                <Avatar src="https://i.pravatar.cc/100?img=33" radius="xl" />
+                <Avatar src="https://i.pravatar.cc/100?img=5" radius="xl" />
+                <Avatar radius="xl" color="emerald">
+                  +10k
+                </Avatar>
+              </AvatarGroup>
+              <Stack gap={0} ml={8}>
+                <Group gap={4}>
+                  <Star size={16} fill="#FACC15" color="#FACC15" />
+                  <Star size={16} fill="#FACC15" color="#FACC15" />
+                  <Star size={16} fill="#FACC15" color="#FACC15" />
+                  <Star size={16} fill="#FACC15" color="#FACC15" />
+                  <Star size={16} fill="#FACC15" color="#FACC15" />
+                </Group>
+                <Text size="xs" c="dimmed" fw={500}>
+                  Trusted by 10,000+ businesses
+                </Text>
+              </Stack>
             </Group>
           </Group>
         </Stack>
+
+        <BrowserMockup />
       </Container>
+
       <Features />
       <SecondaryFeatures />
     </Box>
