@@ -11,7 +11,9 @@ import {
   rem,
   Badge,
   Group,
+  Button,
 } from "@mantine/core";
+import { Icon } from "@iconify/react";
 import { SpotlightCard } from "../SpotlightCard"; // Import komponen baru
 import { PremiumCard } from "../PremiumCard";
 
@@ -152,8 +154,13 @@ export function SecondaryFeatures() {
         <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={20}>
           {secondaryFeatures.map((feature: any, index: number) => (
             // Implementasi SpotlightCard
-            <PremiumCard key={index}>
-              <Stack justify="space-between" h="100%" gap="sm">
+            <PremiumCard key={index} className="feature-card-group">
+              <Stack
+                justify="space-between"
+                h="100%"
+                gap="sm"
+                style={{ position: "relative", zIndex: 10 }}
+              >
                 <Box>
                   <Group justify="space-between" align="start" mb="md">
                     <ThemeIcon
@@ -192,6 +199,37 @@ export function SecondaryFeatures() {
                   </Text>
                 </Box>
               </Stack>
+
+              {/* Hover Overlay */}
+              <Box
+                className="feature-overlay"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  backgroundColor: "rgba(0, 0, 0, 0.6)",
+                  backdropFilter: "blur(4px)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  opacity: 0,
+                  transition: "opacity 0.2s ease",
+                  zIndex: 20,
+                  borderRadius: "inherit",
+                }}
+              >
+                <Button
+                  size="md"
+                  radius="xl"
+                  className="btn-primary-action view-demo-btn"
+                  leftSection={<Icon icon="tabler:eye" width={18} />}
+                  style={{
+                    transform: "translateY(10px)",
+                    transition: "transform 0.2s ease",
+                  }}
+                >
+                  View Demo
+                </Button>
+              </Box>
             </PremiumCard>
           ))}
         </SimpleGrid>

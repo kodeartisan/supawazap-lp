@@ -274,3 +274,73 @@ a {
     transform: rotate(360deg);
   }
 }
+
+.feature-card-group:hover .feature-overlay {
+  opacity: 1 !important;
+}
+
+.feature-card-group:hover .view-demo-btn {
+  transform: translateY(0) !important;
+}
+
+/* --- INFINITE MARQUEE ANIMATION --- */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem; /* Jarak antar kartu */
+  /* Gradient Mask: Membuat efek fade di kiri dan kanan */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem; /* Harus sama dengan container gap */
+  min-width: 100%;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
+
+/* Pause animasi saat user hover agar bisa dibaca */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}

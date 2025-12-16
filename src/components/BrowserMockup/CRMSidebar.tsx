@@ -86,6 +86,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
     case "text":
       return (
         <TextInput
+          id={`crm-field-${field.id}`}
           label={field.name}
           defaultValue={field.value}
           styles={inputStyles}
@@ -94,6 +95,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
     case "number":
       return (
         <NumberInput
+          id={`crm-field-${field.id}`}
           label={field.name}
           defaultValue={field.value}
           thousandSeparator=","
@@ -108,6 +110,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
     case "url":
       return (
         <TextInput
+          id={`crm-field-${field.id}`}
           label={field.name}
           defaultValue={field.value}
           rightSection={
@@ -121,6 +124,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
     case "select":
       return (
         <Select
+          id={`crm-field-${field.id}`}
           label={field.name}
           defaultValue={field.value}
           data={field.options}
@@ -131,6 +135,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
     case "multiSelect":
       return (
         <MultiSelect
+          id={`crm-field-${field.id}`}
           label={field.name}
           defaultValue={field.value}
           data={field.options}
@@ -163,6 +168,7 @@ const FieldRenderer = ({ field }: { field: any }) => {
             {field.name}
           </Text>
           <Switch
+            id={`crm-field-${field.id}`}
             defaultChecked={field.value}
             color="emerald"
             size="sm"
@@ -193,7 +199,12 @@ const FieldRenderer = ({ field }: { field: any }) => {
               borderRadius: 6,
             }}
           >
-            <Rating defaultValue={field.value} color="yellow" size="sm" />
+            <Rating
+              name={`crm-rating-${field.id}`}
+              defaultValue={field.value}
+              color="yellow"
+              size="sm"
+            />
           </Group>
         </Stack>
       );
@@ -288,6 +299,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
 
         {/* Navigation Tabs */}
         <SegmentedControl
+          name="crm-tabs"
           value={activeTab}
           onChange={onTabChange}
           fullWidth
@@ -322,12 +334,14 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
             </Avatar>
             <Stack gap={6} style={{ flex: 1 }}>
               <TextInput
+                id="crm-name"
                 label="Name"
                 defaultValue={CONTACT_DATA.name}
                 variant="filled"
                 styles={inputStyles}
               />
               <TextInput
+                id="crm-number"
                 label="Number"
                 defaultValue={CONTACT_DATA.number}
                 variant="filled"
@@ -345,6 +359,7 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
 
           {/* Tags */}
           <TagsInput
+            id="crm-tags"
             label="Tags"
             placeholder="Add tag..."
             defaultValue={CONTACT_DATA.tags}

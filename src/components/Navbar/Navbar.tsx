@@ -13,32 +13,27 @@ import {
   Transition,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Chrome, Download, Zap } from "lucide-react";
+import { Chrome, Download } from "lucide-react";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 // --- Components ---
 
 const Logo = ({ compact }: { compact?: boolean }) => (
   <Group gap={8} style={{ cursor: "pointer" }} wrap="nowrap">
-    <Box
-      w={compact ? 28 : 32}
-      h={compact ? 28 : 32}
+    <Image
+      src="/logo.png"
+      alt="Supawazap Logo"
+      width={compact ? 28 : 32}
+      height={compact ? 28 : 32}
       style={{
-        background:
-          "linear-gradient(135deg, var(--brand-emerald-500), var(--brand-emerald-700))",
-        borderRadius: 8,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxShadow: "0 0 15px rgba(16, 185, 129, 0.4)",
-        transition: "all 0.3s ease",
+        objectFit: "contain",
+        filter: "drop-shadow(0 0 10px rgba(16, 185, 129, 0.4))",
       }}
-    >
-      <Zap color="white" size={compact ? 16 : 20} fill="white" />
-    </Box>
+    />
     <Text
-      fw={700}
-      size={compact ? "md" : "lg"}
+      fw={"bold"}
+      size={"xl"}
       c="white"
       style={{
         letterSpacing: "-0.02em",
@@ -46,7 +41,7 @@ const Logo = ({ compact }: { compact?: boolean }) => (
       }}
     >
       Supa
-      <Text span c="emerald.5">
+      <Text span c="emerald.5" fw={"bold"} size="xl">
         wazap
       </Text>
     </Text>

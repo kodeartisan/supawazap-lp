@@ -15,29 +15,32 @@ import {
   Divider,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
-import { Zap } from "lucide-react";
+import Image from "next/image";
 
 // Logo Component (Daur ulang dari Navbar agar konsisten)
 const Logo = () => (
-  <Group gap={8}>
-    <Box
-      w={32}
-      h={32}
+  <Group gap={8} style={{ cursor: "pointer" }} wrap="nowrap">
+    <Image
+      src="/logo.png"
+      alt="Supawazap Logo"
+      width={32}
+      height={32}
       style={{
-        background:
-          "linear-gradient(135deg, var(--brand-emerald-500), var(--brand-emerald-700))",
-        borderRadius: 8,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxShadow: "0 0 15px rgba(16, 185, 129, 0.2)",
+        objectFit: "contain",
+        filter: "drop-shadow(0 0 10px rgba(16, 185, 129, 0.4))",
+      }}
+    />
+    <Text
+      fw={"bold"}
+      size={"xl"}
+      c="white"
+      style={{
+        letterSpacing: "-0.02em",
+        transition: "all 0.3s ease",
       }}
     >
-      <Zap color="white" size={20} fill="white" />
-    </Box>
-    <Text fw={700} size="lg" c="white" style={{ letterSpacing: "-0.02em" }}>
       Supa
-      <Text span c="emerald.5">
+      <Text span c="emerald.5" fw={"bold"} size="xl">
         wazap
       </Text>
     </Text>
@@ -249,6 +252,7 @@ export function Footer() {
               </Text>
               <Group gap={0} align="stretch">
                 <TextInput
+                  id="footer-newsletter-email"
                   placeholder="Enter your email"
                   size="sm"
                   styles={{

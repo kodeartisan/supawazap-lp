@@ -54,6 +54,7 @@ export function WhatsAppSidebar({ contactName }: WhatsAppSidebarProps) {
       {/* Search Bar */}
       <Box p="sm" style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
         <TextInput
+          id="whatsapp-search"
           placeholder="Search"
           leftSection={<Icon icon="tabler:search" width={14} />}
           radius="md"

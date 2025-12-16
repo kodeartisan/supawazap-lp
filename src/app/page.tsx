@@ -1,9 +1,12 @@
 import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { CTA } from "@/components/CTA";
+import { FAQ } from "@/components/FAQ/FAQ";
 import { Features } from "@/components/Features/Features";
 import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
+import { PainVsGain } from "@/components/PainVsGain/PainVsGain";
+import { Pricing } from "@/components/Pricing/Pricing";
 import { Testimonials } from "@/components/Testimonials";
 import { Typewriter } from "@/components/Typewriter";
 import { Icon } from "@iconify/react";
@@ -195,7 +198,7 @@ export default function Home() {
                   <Text size="sm" c="gray.2" fw={500}>
                     Trusted by{" "}
                     <Text span fw={700} c="white">
-                      100+
+                      Professionals
                     </Text>
                   </Text>
                 </Group>
@@ -209,7 +212,10 @@ export default function Home() {
 
       <Features />
       <SecondaryFeatures />
+      <PainVsGain />
       <Testimonials />
+      <Pricing />
+      <FAQ />
       <CTA />
       <Footer />
     </Box>
