@@ -38,6 +38,48 @@ const TRANSFORMATIONS = [
     gain: "Automate workflows once, let them run forever.",
     stat: "90% Less Work",
   },
+  {
+    icon: "tabler:broadcast",
+    title: "Mass Messaging",
+    pain: "Manually forwarding updates to hundreds of customers one by one.",
+    gain: "Broadcast personalized campaigns to unlimited contacts instantly.",
+    stat: "Unlimited Reach",
+  },
+  {
+    icon: "tabler:address-book",
+    title: "Messy Contacts",
+    pain: "Losing track of leads mixed with family and friends chats.",
+    gain: "Organize with CRM tags, custom fields, and smart labels.",
+    stat: "Total Clarity",
+  },
+  {
+    icon: "tabler:eye-off",
+    title: "Prying Eyes",
+    pain: "Sensitive customer data visible to everyone when working in public.",
+    gain: "Auto-blur messages and names for complete privacy.",
+    stat: "100% Private",
+  },
+  {
+    icon: "tabler:message-plus",
+    title: "Phone Clutter",
+    pain: "Saving temporary numbers to contacts just to send one message.",
+    gain: "Message any number instantly without saving to your phone.",
+    stat: "Clean Contacts",
+  },
+  {
+    icon: "tabler:users-group",
+    title: "Manual Copying",
+    pain: "Manually copying hundreds of group members into a spreadsheet.",
+    gain: "Scrape and export all group participants to Excel in one click.",
+    stat: "Instant Leads",
+  },
+  {
+    icon: "tabler:calendar-star",
+    title: "Missed Prime Time",
+    pain: "Posting status updates manually at odd hours when no one watches.",
+    gain: "Schedule WhatsApp Statuses (Text/Media) for the entire week.",
+    stat: "Max Views",
+  },
 ];
 
 export function PainVsGain() {
