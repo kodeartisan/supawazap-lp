@@ -49,31 +49,27 @@ const Logo = () => (
 
 const SOCIAL_LINKS = [
   { icon: "tabler:brand-twitter", link: "#" },
-  { icon: "tabler:brand-github", link: "#" },
-  { icon: "tabler:brand-discord", link: "#" },
   { icon: "tabler:brand-youtube", link: "#" },
 ];
 
 const FOOTER_DATA = [
   {
-    title: "Product",
+    title: "Links",
     links: [
       { label: "Features", link: "#features" },
       { label: "Pricing", link: "#pricing" },
-      { label: "Changelog", link: "#" },
-      { label: "Docs", link: "#" },
-      { label: "Download", link: "#" },
     ],
   },
   {
-    title: "Company",
+    title: "Legal",
     links: [
-      { label: "About Us", link: "#" },
-      { label: "Blog", link: "#" },
-      { label: "Careers", link: "#" },
-      { label: "Contact", link: "#" },
-      { label: "Partners", link: "#" },
+      { label: "Privacy Policy", link: "/privacy" },
+      { label: "Terms of Service", link: "/terms" },
     ],
+  },
+  {
+    title: "More",
+    links: [],
   },
 ];
 
@@ -192,145 +188,8 @@ export function Footer() {
               </Stack>
             </Stack>
           ))}
-
-          {/* KOLOM 4: STATUS & NEWSLETTER */}
-          <Stack gap="xl">
-            {/* System Status */}
-            <Stack gap="xs">
-              <Text c="white" fw={700} size="sm" tt="uppercase">
-                System Status
-              </Text>
-              <Group
-                gap="xs"
-                p={8}
-                style={{
-                  border: "1px solid rgba(16, 185, 129, 0.2)",
-                  borderRadius: "8px",
-                  backgroundColor: "rgba(16, 185, 129, 0.05)",
-                  width: "fit-content",
-                }}
-              >
-                {/* Pulsing Dot */}
-                <Box
-                  style={{
-                    position: "relative",
-                    width: 8,
-                    height: 8,
-                  }}
-                >
-                  <Box
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      borderRadius: "50%",
-                      backgroundColor: "#10b981",
-                      animation: "pulse-glow 2s infinite",
-                    }}
-                  />
-                  <Box
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      borderRadius: "50%",
-                      backgroundColor: "#10b981",
-                    }}
-                  />
-                </Box>
-                <Text c="emerald.4" size="xs" fw={600}>
-                  All systems operational
-                </Text>
-              </Group>
-            </Stack>
-
-            {/* Newsletter */}
-            <Stack gap="xs">
-              <Text c="white" fw={700} size="sm" tt="uppercase">
-                Subscribe
-              </Text>
-              <Text c="dimmed" size="xs">
-                Get the latest updates and tips directly to your inbox.
-              </Text>
-              <Group gap={0} align="stretch">
-                <TextInput
-                  id="footer-newsletter-email"
-                  placeholder="Enter your email"
-                  size="sm"
-                  styles={{
-                    input: {
-                      borderTopRightRadius: 0,
-                      borderBottomRightRadius: 0,
-                      backgroundColor: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      color: "white",
-                      transition: "border-color 0.2s",
-                      "&:focus": { borderColor: "#10b981" },
-                    },
-                  }}
-                  style={{ flex: 1 }}
-                />
-                <Button
-                  color="emerald"
-                  size="sm"
-                  variant="filled"
-                  style={{
-                    borderTopLeftRadius: 0,
-                    borderBottomLeftRadius: 0,
-                    backgroundImage: "linear-gradient(0deg, #059669, #10b981)",
-                  }}
-                >
-                  <Icon icon="tabler:send" width={16} />
-                </Button>
-              </Group>
-            </Stack>
-          </Stack>
         </SimpleGrid>
-
-        <Divider my={40} color="rgba(255,255,255,0.05)" />
-
-        {/* BOTTOM BAR */}
-        <Group justify="space-between" c="dimmed" fz="xs">
-          <Text size="xs">
-            © {new Date().getFullYear()} Supawazap Inc. All rights reserved.
-          </Text>
-          <Group gap="lg">
-            <Anchor
-              href="#"
-              c="dimmed"
-              size="xs"
-              underline="never"
-              className="hover-white"
-            >
-              Privacy Policy
-            </Anchor>
-            <Anchor
-              href="#"
-              c="dimmed"
-              size="xs"
-              underline="never"
-              className="hover-white"
-            >
-              Terms of Service
-            </Anchor>
-            <Anchor
-              href="#"
-              c="dimmed"
-              size="xs"
-              underline="never"
-              className="hover-white"
-            >
-              Cookie Policy
-            </Anchor>
-          </Group>
-        </Group>
       </Container>
-
-      {/* Global Style Injection untuk hover effect sederhana */}
-      <style jsx global>{`
-        .hover-white:hover {
-          color: white !important;
-          text-decoration: underline;
-        }
-      `}</style>
     </Box>
   );
 }

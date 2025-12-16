@@ -209,7 +209,7 @@ export function Testimonials() {
             style={{ fontSize: rem(42) }}
             className="text-gradient"
           >
-            Loved by Professionals
+            Trusted by Professionals
           </Title>
           <Text c="dimmed" ta="center" maw={600} size="lg">
             Join the community of marketers, agents, and business owners who

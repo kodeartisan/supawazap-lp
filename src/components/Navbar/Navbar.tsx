@@ -15,6 +15,7 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { Chrome, Download } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 // --- Components ---
@@ -49,10 +50,8 @@ const Logo = ({ compact }: { compact?: boolean }) => (
 );
 
 const links = [
-  { link: "#features", label: "Features" },
   { link: "#pricing", label: "Pricing" },
-  { link: "#solutions", label: "Solutions" },
-  { link: "#resources", label: "Resources" },
+  { link: "/privacy", label: "Privacy Policy" },
 ];
 
 export function Navbar() {
@@ -69,37 +68,91 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const items = links.map((link) => (
-    <UnstyledButton
-      key={link.label}
-      onClick={() => setActive(link.link)}
-      style={{
-        fontSize: rem(16),
-        fontWeight: 500,
-        color:
-          active === link.link
-            ? "var(--brand-emerald-400)"
-            : "var(--text-secondary)",
-        transition: "all 0.2s ease",
-        padding: "6px 16px",
-        borderRadius: "99px",
-      }}
-      onMouseEnter={(e) => {
-        if (active !== link.link) {
-          e.currentTarget.style.color = "var(--text-primary)";
-          e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (active !== link.link) {
-          e.currentTarget.style.color = "var(--text-secondary)";
-          e.currentTarget.style.backgroundColor = "transparent";
-        }
-      }}
-    >
-      {link.label}
-    </UnstyledButton>
-  ));
+  // Handle smooth scroll for anchor links
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const navbarHeight = 100; // Offset for fixed navbar
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+    setActive(href);
+  };
+
+  const items = links.map((link) => {
+    const isExternal = link.link.startsWith("/");
+    const isAnchor = link.link.startsWith("#");
+
+    if (isExternal) {
+      return (
+        <Link
+          key={link.label}
+          href={link.link}
+          style={{
+            fontSize: rem(16),
+            fontWeight: 500,
+            color: "var(--text-secondary)",
+            transition: "all 0.2s ease",
+            padding: "6px 16px",
+            borderRadius: "99px",
+            textDecoration: "none",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "var(--text-primary)";
+            e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "var(--text-secondary)";
+            e.currentTarget.style.backgroundColor = "transparent";
+          }}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+
+    return (
+      <UnstyledButton
+        key={link.label}
+        onClick={(e) => isAnchor && handleSmoothScroll(e, link.link)}
+        style={{
+          fontSize: rem(16),
+          fontWeight: 500,
+          color:
+            active === link.link
+              ? "var(--brand-emerald-400)"
+              : "var(--text-secondary)",
+          transition: "all 0.2s ease",
+          padding: "6px 16px",
+          borderRadius: "99px",
+        }}
+        onMouseEnter={(e) => {
+          if (active !== link.link) {
+            e.currentTarget.style.color = "var(--text-primary)";
+            e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (active !== link.link) {
+            e.currentTarget.style.color = "var(--text-secondary)";
+            e.currentTarget.style.backgroundColor = "transparent";
+          }
+        }}
+      >
+        {link.label}
+      </UnstyledButton>
+    );
+  });
 
   return (
     <>
@@ -207,23 +260,49 @@ export function Navbar() {
         style={{ zIndex: 200 }}
       >
         <Stack gap="xl" mt="xl" align="center">
-          {links.map((link) => (
-            <UnstyledButton
-              key={link.label}
-              onClick={() => {
-                setActive(link.link);
-                close();
-              }}
-              style={{
-                fontSize: rem(24),
-                fontWeight: 600,
-                color:
-                  active === link.link ? "var(--brand-emerald-400)" : "white",
-              }}
-            >
-              {link.label}
-            </UnstyledButton>
-          ))}
+          {links.map((link) => {
+            const isExternal = link.link.startsWith("/");
+
+            if (isExternal) {
+              return (
+                <Link
+                  key={link.label}
+                  href={link.link}
+                  onClick={close}
+                  style={{
+                    fontSize: rem(24),
+                    fontWeight: 600,
+                    color: "white",
+                    textDecoration: "none",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+
+            const isAnchor = link.link.startsWith("#");
+
+            return (
+              <UnstyledButton
+                key={link.label}
+                onClick={(e) => {
+                  if (isAnchor) {
+                    handleSmoothScroll(e, link.link);
+                  }
+                  close();
+                }}
+                style={{
+                  fontSize: rem(24),
+                  fontWeight: 600,
+                  color:
+                    active === link.link ? "var(--brand-emerald-400)" : "white",
+                }}
+              >
+                {link.label}
+              </UnstyledButton>
+            );
+          })}
           <Button
             fullWidth
             size="xl"

@@ -17,72 +17,52 @@ import { Icon } from "@iconify/react";
 
 const features = [
   {
-    title: "CRM & Contact Management",
+    title: "Your CRM, Built Into WhatsApp",
     description:
-      "Transform WhatsApp Web into a complete customer database. Manage leads directly from the chat interface.",
+      "Transform WhatsApp Web into a complete customer database. Manage leads directly from the chat interface—no switching apps.",
     points: [
-      "Save contacts with Custom Fields (Text, Date, Select, Rating, etc.)", //
-      "Organize contacts using Tags", //
-      "Interaction history notes per customer", //
-      "Smart Segments for dynamic contact filtering (AND/OR logic)", //
-      "Edit Contact details (Name, Number) directly within the extension", //
-      "Import contacts from Excel, Phone Sync, or Group Members", //
-      "Quickly search contacts by name, number, tags, or custom fields", //
-      "Customizable Contact View columns for better data visibility", //
+      "Save contacts with Custom Fields (Text, Date, Select, Rating, etc.)",
+      "Organize contacts using Tags for instant categorization",
+      "Interaction history notes per customer",
+      "Smart Segments for dynamic contact filtering (AND/OR logic)",
+      "Import contacts from Excel, Phone Sync, or Group Members",
+      "Quickly search contacts by name, number, tags, or custom fields",
+      "Customizable Contact View columns for your workflow",
     ],
     imagePosition: "right",
+    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
   },
   {
-    title: "Build Intelligent Chatbots in Minutes.",
+    title: "Build Once, Automate Forever",
     description:
-      "Automate your follow-ups, lead qualification, and customer support with our Visual Builder. Let Supawazap work while you sleep.",
+      "Create intelligent chatbots in minutes, not months. Our Visual Builder turns your ideas into 24/7 automated assistants.",
     points: [
-      "Trigger flows based on Incoming Message Keywords, Exact Match, or Any Message", //
-      "Auto actions: Reply, Add/Remove Tags, Update CRM Fields, or Archive Chat", //
-      "Personal Trigger scope for private chats or specific Group IDs", //
-      "Dynamic Variables: Insert {sender_name}, {date}, {time} into automated replies", //
-      "Rich Media Replies: Send Images, Videos, Audio, or Documents automatically", //
-      "Wait & Delay steps to create natural conversational pacing", //,
+      "Trigger flows based on Incoming Message Keywords, Exact Match, or Any Message",
+      "Auto actions: Reply, Add/Remove Tags, Update CRM Fields, or Archive Chat",
+      "Personal Trigger scope for personal chats or specific Group IDs",
+      "Dynamic Variables: Insert {sender_name}, {date}, {time} into automated replies",
+      "Rich Media Replies: Send Images, Videos, Audio, or Documents automatically",
+      "Wait & Delay steps to create natural conversational pacing",
     ],
     imagePosition: "left",
+    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
   },
   {
-    title: "Smart Broadcast & Bulk Sender",
+    title: "Bulk Messaging, Zero Risk",
     description:
-      "Our proprietary Human Simulation Engine mimics real typing speed, adds random delays, and uses smart batching to keep your number safe.",
+      "Transform tedious manual messaging into one-click campaigns. Our intelligent engine handles timing, pacing, and safety.",
     points: [
-      "Smart Batching: Automatically splits large lists with rest periods.", //
-      "Typing Presence: Shows 'Typing...' status before sending for a natural feel.", //
-      "Randomized Delays between messages to simulate human behavior", //
-      "Spintax support {Hi|Hello} for automatic message variation", //
-      "Smart Scheduler: Schedule broadcasts for specific future dates and times", //
-      "Post-Broadcast Automation: Auto-tag or Archive chat based on delivery status", //
-      "Automatic Number Validation before sending to prevent errors", //
+      "Smart Batching: Automatically splits large lists with rest periods.",
+      "Typing Presence: Shows 'Typing...' status before sending for a natural feel.",
+      "Randomized Delays between messages to simulate human behavior",
+      "Smart Scheduler: Schedule broadcasts for specific future dates and times",
+      "Post-Broadcast Automation: Auto-tag or Archive chat based on delivery status",
+      "Automatic Number Validation before sending to prevent errors",
+      "Track delivery status for each recipient",
+      "Export delivery reports for team analysis",
     ],
     imagePosition: "right",
-  },
-  {
-    title: "A Database That Adapts to Your Business.",
-    description:
-      "Go beyond simple contact saving. Create a fully customized database with specific data types that matter to you",
-    points: [
-      "Support for Text, Number, Date, URL, and Toggle types", //
-      "Selection fields: Dropdown and Multi-Select options", //
-      "Store Images and Documents directly in contact profiles", //
-      "Rating System: Score leads with 1-5 star ratings", //
-      "Auto-update fields via Workflow automation actions", //
-      "Toggle field visibility in the Contact Manager columns", //
-      "Filter contacts using specific Custom Field values", //
-    ],
-    imagePosition: "left",
-  },
-
-  {
-    title: "Automate Your Campaign Follow-up",
-    description:
-      "Don't just send messages—act on the results. Supawazap automatically cleans your list and tags users based on delivery status.",
-    points: [],
-    imagePosition: "right",
+    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
   },
 ];
 
@@ -151,42 +131,36 @@ export function Features() {
                 </List>
               </Stack>
 
-              {/* Visual/Image Placeholder */}
+              {/* YouTube Video Embed */}
               <Box style={{ flex: 1 }}>
                 <Paper
                   radius="xl"
                   h={400}
+                  p={0}
                   style={{
-                    background: "var(--bg-card-primary)",
+                    background: "#000",
                     border: "1px solid var(--bg-glass-overlay)",
                     position: "relative",
                     overflow: "hidden",
                   }}
                 >
-                  {/* Decorative Elements mimicking the screenshot UI */}
-                  <Box
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${feature.videoId}?autoplay=1&mute=1&loop=1&playlist=${feature.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1`}
+                    title={feature.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     style={{
                       position: "absolute",
                       top: "50%",
                       left: "50%",
+                      width: "177.78%", // 16:9 aspect ratio compensation
+                      height: "177.78%",
                       transform: "translate(-50%, -50%)",
-                      width: "80%",
-                      height: "80%",
-                      background:
-                        "radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%)",
-                      filter: "blur(40px)",
-                    }}
-                  />
-
-                  {/* Mock UI Element */}
-                  <Box
-                    style={{
-                      position: "absolute",
-                      inset: 20,
-                      background: "rgba(0,0,0,0.4)",
-                      borderRadius: 16,
-                      border: "1px solid rgba(255,255,255,0.05)",
-                      backdropFilter: "blur(10px)",
+                      borderRadius: "inherit",
+                      pointerEvents: "none",
                     }}
                   />
                 </Paper>
@@ -212,34 +186,30 @@ export function Features() {
                   radius="xl"
                   h={250}
                   style={{
-                    background: "var(--bg-card-primary)",
+                    background: "#000",
                     border: "1px solid var(--bg-glass-overlay)",
                     position: "relative",
                     overflow: "hidden",
                     width: "100%",
                   }}
                 >
-                  <Box
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${feature.videoId}?autoplay=1&mute=1&loop=1&playlist=${feature.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1`}
+                    title={feature.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     style={{
                       position: "absolute",
                       top: "50%",
                       left: "50%",
+                      width: "177.78%",
+                      height: "177.78%",
                       transform: "translate(-50%, -50%)",
-                      width: "80%",
-                      height: "80%",
-                      background:
-                        "radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%)",
-                      filter: "blur(40px)",
-                    }}
-                  />
-                  <Box
-                    style={{
-                      position: "absolute",
-                      inset: 15,
-                      background: "rgba(0,0,0,0.4)",
-                      borderRadius: 12,
-                      border: "1px solid rgba(255,255,255,0.05)",
-                      backdropFilter: "blur(10px)",
+                      borderRadius: "inherit",
+                      pointerEvents: "none",
                     }}
                   />
                 </Paper>

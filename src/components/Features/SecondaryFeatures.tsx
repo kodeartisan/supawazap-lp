@@ -143,11 +143,11 @@ export function SecondaryFeatures() {
             style={{ fontSize: rem(42) }}
             className="text-gradient"
           >
-            Everything You Need to Scale
+            Built for Speed, Designed for Results
           </Title>
           <Text c="dimmed" ta="center" maw={600} size="lg">
-            Supawazap is packed with utility tools designed to make your
-            WhatsApp marketing workflow seamless and efficient.
+            Powerful utilities that save hours every day—all included in one
+            extension.
           </Text>
         </Stack>
 
@@ -200,8 +200,8 @@ export function SecondaryFeatures() {
                 </Box>
               </Stack>
 
-              {/* Hover Overlay */}
-              <Box
+              {/* Hover Overlay - Temporarily disabled */}
+              {/* <Box
                 className="feature-overlay"
                 style={{
                   position: "absolute",
@@ -229,7 +229,7 @@ export function SecondaryFeatures() {
                 >
                   View Demo
                 </Button>
-              </Box>
+              </Box> */}
             </PremiumCard>
           ))}
         </SimpleGrid>

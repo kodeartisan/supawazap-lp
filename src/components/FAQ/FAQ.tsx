@@ -14,16 +14,34 @@ import { Icon } from "@iconify/react";
 
 const faqs = [
   {
-    value: "privacy",
-    question: "Do you store my contacts or chat history?",
-    answer:
-      "Never. Supawazap operates on a 'Local-First' architecture. All your CRM data, contacts, and message templates are stored locally in your browser's database (IndexedDB). We have zero access to your personal data or your customers' information.",
-  },
-  {
     value: "requirements",
     question: "Do I need the WhatsApp API or a specific OS?",
     answer:
       "No API required. Supawazap works directly on top of WhatsApp Web. It works on any operating system (Windows, Mac, Linux) as long as you have the Google Chrome, Edge, or Brave browser installed.",
+  },
+  {
+    value: "browsers",
+    question: "Which browsers are supported?",
+    answer:
+      "Supawazap works on all Chromium-based browsers: Google Chrome, Microsoft Edge, Brave, Opera, and Arc.",
+  },
+  {
+    value: "privacy",
+    question: "Is my data safe? Do you collect my contacts or messages?",
+    answer:
+      "100% safe. Supawazap uses a 'Local-First' architecture—all your data (contacts, messages, templates) is stored only on your device in IndexedDB. We never collect, store, or access your personal data or your customers' information.",
+  },
+  {
+    value: "activation",
+    question: "How do I activate my Pro license?",
+    answer:
+      "After purchasing, you'll receive a 16-character license key (xxxx-xxxx-xxxx-xxxx) via email. Open Supawazap, click the key icon (Activate) in the sidebar, enter your license key, then click the Activate button. Your Pro features will be unlocked instantly.",
+  },
+  {
+    value: "support",
+    question: "I can't find my answer here. How can I get help?",
+    answer:
+      "No worries! You can reach our support team anytime at supawazap@gmail.com",
   },
 ];
 
@@ -97,19 +115,11 @@ export function FAQ() {
                 backgroundColor: "rgba(255, 255, 255, 0.03)",
                 border: "1px solid rgba(255, 255, 255, 0.05)",
                 transition: "all 0.3s ease",
-                "&[data-active]": {
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  borderColor: "rgba(16, 185, 129, 0.3)",
-                  boxShadow: "0 0 20px rgba(16, 185, 129, 0.05)",
-                },
                 marginBottom: rem(16),
               },
               control: {
                 color: "white",
                 padding: rem(20),
-                "&:hover": {
-                  backgroundColor: "transparent",
-                },
               },
               label: {
                 fontWeight: 600,
