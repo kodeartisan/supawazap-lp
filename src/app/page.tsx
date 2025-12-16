@@ -1,5 +1,6 @@
 import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { FAQ } from "@/components/FAQ/FAQ";
+import { FeaturedOn } from "@/components/FeaturedOn/FeaturedOn";
 import { Features } from "@/components/Features/Features";
 import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Footer } from "@/components/Footer/Footer";
@@ -323,6 +324,7 @@ export default function Home() {
       {/* <PainVsGain /> */}
       {/* <Testimonials /> */}
       <Pricing />
+      <FeaturedOn />
       <FAQ />
       <Footer />
     </Box>
