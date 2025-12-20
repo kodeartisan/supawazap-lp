@@ -75,7 +75,7 @@ export default function Home() {
               textAlign: "center",
             }}
           >
-            Your Complete WhatsApp Marketing Stack <br />
+            The Only WhatsApp Extension You Need <br />
             <Text
               span
               inherit

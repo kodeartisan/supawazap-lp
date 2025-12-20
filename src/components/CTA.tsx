@@ -68,12 +68,12 @@ export function CTA() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Stop Wasting Time on Manual Chats.
+                Set Your WhatsApp on Autopilot.
               </Title>
               <Text c="dimmed" size="xl" maw={600} mx="auto">
-                Automate your daily WhatsApp routine. From smart broadcasts to
-                quick replies, let Supawazap handle the busywork so you can
-                focus on growing your business.
+                Free yourself from repetitive tasks. Supawazap replaces your
+                manual grind with automated superpowers. The single best upgrade
+                for serious businesses.
               </Text>
             </Stack>
 

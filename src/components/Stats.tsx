@@ -1,9 +1,9 @@
 import { Container, SimpleGrid, Stack, Text, Title, rem } from "@mantine/core";
 
 const stats = [
-  { value: "98%", label: "Open Rate (vs 20% Email)" },
-  { value: "45%", label: "Response Rate (vs 2% Email)" },
-  { value: "90s", label: "Avg Response (vs 90 mins)" },
+  { value: "98%", label: "Open Rate (vs 20% )" },
+  { value: "45%", label: "Response Rate (vs 2%)" },
+  { value: "90s", label: "Response (vs 90 mins)" },
   { value: "5x", label: "Higher Conversion" },
 ];
 
