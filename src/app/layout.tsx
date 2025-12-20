@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Supawazap: WhatsApp™ Web with Superpowers",
+  title: "Supawazap: #1 CRM, Broadcast & Automation Tool for WhatsApp™ Web",
   description:
-    "Supercharge your WA with CRM, Bulk Sender, Scheduler, Workflow, Quick Reply, Export Contacts, and privacy tools.",
+    "Transform WhatsApp into a sales machine. The ultimate extension for Contact Management, Workflow Automation, Bulk Sender, and Schedule Messages. Start for free.",
 };
 
 export default function RootLayout({

@@ -2,8 +2,8 @@ import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { CTA } from "@/components/CTA";
 import { FAQ } from "@/components/FAQ/FAQ";
 import { FeaturedOn } from "@/components/FeaturedOn/FeaturedOn";
+
 import { Features } from "@/components/Features/Features";
-import { SecondaryFeatures } from "@/components/Features/SecondaryFeatures";
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { PainVsGain } from "@/components/PainVsGain/PainVsGain";
@@ -75,7 +75,7 @@ export default function Home() {
               textAlign: "center",
             }}
           >
-            The Only WhatsApp Extension You Need <br />
+            WhatsApp with Superpowers <br />
             <Text
               span
               inherit
@@ -220,8 +220,8 @@ export default function Home() {
 
         <Stats />
       </Container>
-      {/* <Features /> */}
-      <SecondaryFeatures />
+
+      <Features />
       {/* <PainVsGain /> */}
       {/* <Testimonials /> */}
       <Pricing />

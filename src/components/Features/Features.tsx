@@ -3,81 +3,185 @@
 import {
   Box,
   Container,
-  Group,
-  List,
   SimpleGrid,
   Stack,
   Text,
   ThemeIcon,
   Title,
   rem,
-  Paper,
+  Badge,
+  Group,
+  Button,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
+import { SpotlightCard } from "../SpotlightCard"; // Import komponen baru
+import { PremiumCard } from "../PremiumCard";
 
 const features = [
   {
-    title: "Your CRM, Built Into WhatsApp",
+    emoji: "📇",
+    title: "Contact Management",
     description:
-      "Transform WhatsApp Web into a complete customer database. Manage leads directly from the chat interface—no switching apps.",
-    points: [
-      "Save contacts with Custom Fields (Text, Date, Select, Rating, etc.)",
-      "Organize contacts using Tags for instant categorization",
-      "Interaction history notes per customer",
-      "Smart Segments for dynamic contact filtering (AND/OR logic)",
-      "Import contacts from Excel, Phone Sync, or Group Members",
-      "Quickly search contacts by name, number, tags, or custom fields",
-      "Customizable Contact View columns for your workflow",
-    ],
-    imagePosition: "right",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      "Manage your leads. View detailed profiles, assign tags, and keep your contact list organized directly inside WhatsApp.",
+    youtubeId: "dQw4w9WgXcQ",
   },
   {
-    title: "Build Once, Automate Forever",
+    emoji: "🚀",
+    title: "Workflow Automation",
     description:
-      "Create intelligent chatbots in minutes, not months. Our Visual Builder turns your ideas into 24/7 automated assistants.",
-    points: [
-      "Trigger flows based on Incoming Message Keywords, Exact Match, or Any Message",
-      "Auto actions: Reply, Add/Remove Tags, Update CRM Fields, or Archive Chat",
-      "Personal Trigger scope for personal chats or specific Group IDs",
-      "Dynamic Variables: Insert {sender_name}, {date}, {time} into automated replies",
-      "Rich Media Replies: Send Images, Videos, Audio, or Documents automatically",
-      "Wait & Delay steps to create natural conversational pacing",
-    ],
-    imagePosition: "left",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      "Build no-code chatbots. Visually create flows with triggers, keyword auto-replies, and actions to automate conversations 24/7.",
+    youtubeId: "dQw4w9WgXcQ",
   },
   {
-    title: "Bulk Messaging, Zero Risk",
+    emoji: "📡",
+    title: "Smart Broadcast",
     description:
-      "Transform tedious manual messaging into one-click campaigns. Our intelligent engine handles timing, pacing, and safety.",
-    points: [
-      "Smart Batching: Automatically splits large lists with rest periods.",
-      "Typing Presence: Shows 'Typing...' status before sending for a natural feel.",
-      "Randomized Delays between messages to simulate human behavior",
-      "Smart Scheduler: Schedule broadcasts for specific future dates and times",
-      "Post-Broadcast Automation: Auto-tag or Archive chat based on delivery status",
-      "Automatic Number Validation before sending to prevent errors",
-      "Track delivery status for each recipient",
-      "Export delivery reports for team analysis",
-    ],
-    imagePosition: "right",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      "Reach thousands instantly. Send personalized campaigns with schedule, batching, and spintax to avoid spam detection.",
+  },
+  {
+    emoji: "🎯",
+    title: "Smart Segment",
+    description:
+      "Target the right audience. Create dynamic rules to filter contacts by tags, country, or activity for laser-focused campaigns.",
+  },
+  {
+    emoji: "🔧",
+    title: "Custom Field",
+    description:
+      "Go beyond names. Store personalized data like Order IDs or preferences to segment your audience effectively.",
+  },
+  {
+    emoji: "🤖",
+    title: "Post Broadcast",
+    description:
+      "Automate after sending. Trigger actions like adding tags, updating fields, or sending follow-ups based on delivery status.",
+  },
+  {
+    emoji: "📝",
+    title: "Notes & History",
+    description:
+      "Track every interaction. Add private notes to customer profiles to remember important details and history.",
+  },
+  {
+    emoji: "🧩",
+    title: "Message Templates",
+    description:
+      "Save time on rewriting. Create reusable templates with media, buttons, and variables for faster communication.",
+  },
+  {
+    emoji: "⚡",
+    title: "Quick Reply",
+    description:
+      "Reply in milliseconds. Save text, image, video, or PDF templates and send them with a single click.",
+  },
+  {
+    emoji: "🗓️",
+    title: "Status Scheduler",
+    description:
+      "Automate your 'Story Selling'. Schedule WhatsApp Status updates (Text/Media) for the entire week in advance.",
+  },
+  {
+    emoji: "🏷️",
+    title: "Smart Tags",
+    description:
+      "Organize contacts with unlimited color-coded tags. Filter and broadcast to specific segments instantly.",
+  },
+  {
+    emoji: "👥",
+    title: "Group Member Scraper",
+    description:
+      "Turn groups into leads. Extract members from multiple groups at once, optionally include admins, and export to CSV or Excel.",
+  },
+  {
+    emoji: "📒",
+    title: "Contact Scraper",
+    description:
+      "Export your network. Filter contacts by type (Saved/Unsaved), account status (Business/Personal), or unread messages.",
+  },
+  {
+    emoji: "✅",
+    title: "Number Validator",
+    description:
+      "Clean your database. Bulk validate thousands of numbers to separate active accounts from invalid ones before broadcasting.",
+  },
+
+  {
+    emoji: "🔒",
+    title: "Privacy Blur",
+    description:
+      "Work safely in public. Blur sensitive info like contact names, photos, and message content automatically. Unblur on hover.",
+  },
+  {
+    emoji: "👋",
+    title: "Direct Chat",
+    description:
+      "Start conversations instantly without saving the number to your phone contacts. Supports 'Typing...' simulation.",
+  },
+  {
+    emoji: "🔗",
+    title: "Link Generator",
+    description:
+      "Turn traffic into chats. Generate custom `wa.me` links with pre-filled messages for your ads and social bio.",
+  },
+  {
+    emoji: "🔀",
+    title: "Spintax Engine",
+    description:
+      "Avoid spam detection. Automatically randomize greetings and phrases (e.g., {Hi|Hello}) so every message looks unique.",
+  },
+
+  {
+    emoji: "😀",
+    title: "Emoji & Formatting",
+    description:
+      "Express yourself clearly. Built-in emoji picker and rich text tools (Bold, Italic, Strikethrough) for perfect message composition.",
+  },
+  {
+    emoji: "⏰",
+    title: "Schedule Message",
+    description:
+      "Never miss a follow-up. Draft messages now and schedule them to be sent automatically at a precise future date and time.",
+  },
+  {
+    emoji: "📂",
+    title: "Bulk Chat Archiver",
+    description:
+      "Declutter your inbox. Archive inactive chats in bulk to keep your workspace focused on what matters.",
+  },
+  {
+    emoji: "📌",
+    title: "Bulk Pin Manager",
+    description:
+      "Prioritize key conversations. Pin multiple chats to the top at once so you never lose track of VIPs.",
+  },
+  {
+    emoji: "🔇",
+    title: "Bulk Mute Manager",
+    description:
+      "Silence the noise. Mute noisy groups or contacts in bulk to regain your focus and productivity.",
   },
 ];
 
+import { useState } from "react";
+import { Modal } from "@mantine/core";
+
 export function Features() {
+  const [activeFeature, setActiveFeature] = useState<any | null>(null);
+
   return (
-    <Box py={100} id="features">
-      <Container size="lg">
-        <Stack align="center" mb={{ base: 60, md: 100 }}>
+    <Box id="features" py={100} style={{ position: "relative", zIndex: 1 }}>
+      <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
+        <Stack align="center" mb={{ base: 40, md: 80 }}>
           <Title
             order={2}
-            ta="center"
-            style={{ fontSize: rem(60) }}
-            className="text-gradient"
+            className="text-gradient" // Menggunakan class global Anda
+            style={{
+              fontSize: rem(60),
+              fontWeight: 800,
+              lineHeight: 1.1,
+            }}
           >
-            Automate. Organize. Scale.
+            The Swiss Army Knife for WhatsApp.
           </Title>
           <Text
             c="dimmed"
@@ -86,167 +190,195 @@ export function Features() {
             size="xl"
             style={{ lineHeight: 1.6 }}
           >
-            Built for power users who need more than just a chat app. Experience
-            the next evolution of WhatsApp Web.
+            Why install multiple extensions? Get every utility you need for
+            WhatsApp marketing in a single, lightweight package.
           </Text>
         </Stack>
 
-        <Stack gap={120}>
-          {features.map((feature, index) => (
-            <Group
-              key={index}
-              gap={80}
-              align="center"
-              style={{
-                flexDirection:
-                  feature.imagePosition === "right" ? "row" : "row-reverse",
-              }}
-              visibleFrom="md"
-            >
-              {/* Text Content */}
-              <Stack style={{ flex: 1 }}>
-                <Title order={2} style={{ fontSize: rem(42), fontWeight: 800 }}>
-                  {feature.title}
-                </Title>
-                <Text
-                  c="dimmed"
-                  size="xl"
-                  mt="md"
-                  style={{ fontSize: rem(22), lineHeight: 1.6 }}
-                >
-                  {feature.description}
-                </Text>
-
-                <List
-                  mt={30}
-                  spacing="md"
-                  size="lg"
-                  icon={
-                    <ThemeIcon color="emerald" size={24} radius="xl">
-                      <Icon icon="tabler:check" width={14} />
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={20}>
+          {features.map((feature: any, index: number) => (
+            // Implementasi SpotlightCard
+            <PremiumCard key={index} className="feature-card-group">
+              <Stack
+                justify="space-between"
+                h="100%"
+                gap="sm"
+                style={{ position: "relative", zIndex: 10 }}
+              >
+                <Box>
+                  <Group justify="space-between" align="start" mb="md">
+                    <ThemeIcon
+                      size={60}
+                      radius="md"
+                      variant="light"
+                      color="gray"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "1px solid rgba(255, 255, 255, 0.1)",
+                        color: "#fff",
+                      }}
+                    >
+                      <Text style={{ fontSize: rem(32) }}>{feature.emoji}</Text>
                     </ThemeIcon>
-                  }
-                >
-                  {feature.points.map((point, idx) => (
-                    <List.Item key={idx} c="white">
-                      <Text
-                        span
-                        c="gray.3"
-                        size="lg"
-                        style={{ lineHeight: 1.6 }}
+                    {feature.comingSoon && (
+                      <Badge
+                        variant="light"
+                        color="orange"
+                        size="md"
+                        style={{
+                          backgroundColor: "rgba(251, 146, 60, 0.1)",
+                          color: "#fb923c",
+                          border: "1px solid rgba(251, 146, 60, 0.2)",
+                        }}
                       >
-                        {point}
-                      </Text>
-                    </List.Item>
-                  ))}
-                </List>
-              </Stack>
-
-              {/* YouTube Video Embed */}
-              <Box style={{ flex: 1 }}>
-                <Paper
-                  radius="xl"
-                  h={400}
-                  p={0}
-                  style={{
-                    background: "#000",
-                    border: "1px solid var(--bg-glass-overlay)",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${feature.videoId}?autoplay=1&mute=1&loop=1&playlist=${feature.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1`}
-                    title={feature.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      width: "177.78%", // 16:9 aspect ratio compensation
-                      height: "177.78%",
-                      transform: "translate(-50%, -50%)",
-                      borderRadius: "inherit",
-                      pointerEvents: "none",
-                    }}
-                  />
-                </Paper>
-              </Box>
-            </Group>
-          ))}
-
-          {/* Mobile View (Consistent Order) */}
-          <Stack gap={100} hiddenFrom="md">
-            {features.map((feature, index) => (
-              <Stack key={index} gap="xl">
-                {/* Visual First on Mobile for Impact, or Text First? Text First is usually safer for context. Let's do Text First. */}
-                <Stack>
-                  <Title order={2} fz={32} fw={800} lh={1.2}>
+                        Coming Soon
+                      </Badge>
+                    )}
+                  </Group>
+                  <Text fz={22} fw={700} mb="xs" c="white">
                     {feature.title}
-                  </Title>
-                  <Text c="dimmed" size="md">
+                  </Text>
+                  <Text c="dimmed" size="md" lh={1.6}>
                     {feature.description}
                   </Text>
-                </Stack>
+                </Box>
+              </Stack>
 
-                <Paper
+              {/* Hover Overlay */}
+              <Box
+                className="feature-overlay"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  backgroundColor: "rgba(0, 0, 0, 0.6)",
+                  backdropFilter: "blur(4px)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  opacity: 0,
+                  transition: "opacity 0.2s ease",
+                  zIndex: 20,
+                  borderRadius: "inherit",
+                }}
+              >
+                <Button
+                  size="md"
                   radius="xl"
-                  h={250}
+                  className="btn-primary-action view-demo-btn"
+                  leftSection={<Icon icon="tabler:eye" width={18} />}
+                  onClick={() => setActiveFeature(feature)}
                   style={{
-                    background: "#000",
-                    border: "1px solid var(--bg-glass-overlay)",
-                    position: "relative",
-                    overflow: "hidden",
-                    width: "100%",
+                    transform: "translateY(10px)",
+                    transition: "transform 0.2s ease",
                   }}
                 >
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${feature.videoId}?autoplay=1&mute=1&loop=1&playlist=${feature.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1`}
-                    title={feature.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      width: "177.78%",
-                      height: "177.78%",
-                      transform: "translate(-50%, -50%)",
-                      borderRadius: "inherit",
-                      pointerEvents: "none",
-                    }}
-                  />
-                </Paper>
-
-                <List
-                  spacing="sm"
-                  size="md"
-                  icon={
-                    <ThemeIcon color="emerald" size={20} radius="xl">
-                      <Icon icon="tabler:check" width={12} />
-                    </ThemeIcon>
-                  }
-                >
-                  {feature.points.map((point, idx) => (
-                    <List.Item key={idx} c="white">
-                      <Text span c="gray.3" size="sm">
-                        {point}
-                      </Text>
-                    </List.Item>
-                  ))}
-                </List>
-              </Stack>
-            ))}
-          </Stack>
-        </Stack>
+                  Watch Demo
+                </Button>
+              </Box>
+            </PremiumCard>
+          ))}
+        </SimpleGrid>
       </Container>
+
+      {/* Video Modal */}
+      <Modal
+        opened={!!activeFeature}
+        onClose={() => setActiveFeature(null)}
+        title={
+          <Group gap="xs">
+            <Text size="xl">{activeFeature?.emoji}</Text>
+            <Text fw={700} size="lg" c="white">
+              {activeFeature?.title}
+            </Text>
+          </Group>
+        }
+        size="70%"
+        centered
+        padding={0} // Remove default padding to let video/footer touch edges
+        overlayProps={{
+          backgroundOpacity: 0.55,
+          blur: 3,
+        }}
+        styles={{
+          content: {
+            backgroundColor: "#1A1B1E",
+            border: "1px solid rgba(255,255,255,0.1)",
+            overflow: "hidden", // Ensure footer radius works
+          },
+          header: {
+            backgroundColor: "#1A1B1E",
+            color: "white",
+            padding: "16px 20px",
+          },
+          body: {
+            padding: 0, // Custom padding for body parts
+          },
+          close: {
+            color: "white",
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,0.1)",
+            },
+          },
+        }}
+      >
+        <Stack gap={0}>
+          {/* Video Section */}
+          <Box
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%", // 16:9 Aspect Ratio
+              backgroundColor: "#000",
+            }}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${
+                activeFeature?.youtubeId || "dQw4w9WgXcQ"
+              }?autoplay=1&mute=1`} // Dynamic ID with fallback
+              title="Video Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          </Box>
+
+          {/* Footer Section - Matches the screenshot layout */}
+          <Group
+            justify="space-between"
+            align="center"
+            p="md"
+            style={{
+              backgroundColor: "#25262B", // Slightly lighter dark background for footer
+              borderTop: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <Text c="dimmed" size="sm" style={{ flex: 1, lineHeight: 1.4 }}>
+              {activeFeature?.description}
+            </Text>
+            <Button
+              component="a"
+              href="https://chromewebstore.google.com/detail/supawazap/jbbjnkkhhlgglfcpcngjfkjjmldkphgl"
+              target="_blank"
+              // color="emerald" // Theme primary is emerald, so default is fine, but being explicit is safe.
+              // radius="xl"    // Theme default is xl.
+              // Let's rely on theme defaults where possible, but I will explicitly set it to match the "Install" buttons elsewhere which are likely emerald.
+              color="emerald"
+              size="md"
+              radius="xl"
+            >
+              Install
+            </Button>
+          </Group>
+        </Stack>
+      </Modal>
     </Box>
   );
 }

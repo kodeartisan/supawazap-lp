@@ -70,7 +70,7 @@ const FOOTER_DATA = [
   },
   {
     title: "More",
-    links: [],
+    links: [{ label: "Support", link: "/support" }],
   },
 ];
 

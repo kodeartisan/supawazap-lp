@@ -51,8 +51,8 @@ const Logo = ({ compact }: { compact?: boolean }) => (
 );
 
 const links = [
+  { link: "#features", label: "Features" },
   { link: "#pricing", label: "Pricing" },
-  { link: "/privacy", label: "Privacy Policy" },
 ];
 
 export function Navbar() {
