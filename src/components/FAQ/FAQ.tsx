@@ -68,7 +68,7 @@ export function FAQ() {
 
             <Title
               order={2}
-              style={{ fontSize: rem(42), lineHeight: 1.1 }}
+              style={{ fontSize: rem(60), lineHeight: 1.1 }}
               mb="md"
             >
               Frequently Asked <br />
@@ -84,7 +84,7 @@ export function FAQ() {
                 Questions
               </Text>
             </Title>
-            <Text c="dimmed" size="lg" maw={450}>
+            <Text c="dimmed" size="xl" maw={450} style={{ lineHeight: 1.6 }}>
               Everything you need to know about safety, privacy, and how
               Supawazap helps you scale your business.
             </Text>
@@ -119,27 +119,29 @@ export function FAQ() {
               },
               control: {
                 color: "white",
-                padding: rem(20),
+                padding: rem(24),
               },
               label: {
-                fontWeight: 600,
-                fontSize: rem(16),
+                fontWeight: 700,
+                fontSize: rem(20),
               },
               content: {
-                padding: rem(20),
+                padding: rem(24),
                 paddingTop: 0,
               },
               chevron: {
                 color: "#34d399",
+                width: rem(24),
+                height: rem(24),
               },
             }}
-            chevron={<Icon icon="tabler:chevron-down" width={20} />}
+            chevron={<Icon icon="tabler:chevron-down" width={24} />}
           >
             {faqs.map((faq) => (
               <Accordion.Item key={faq.value} value={faq.value}>
                 <Accordion.Control>{faq.question}</Accordion.Control>
                 <Accordion.Panel>
-                  <Text size="sm" c="gray.4" lh={1.6}>
+                  <Text size="lg" c="gray.4" lh={1.6}>
                     {faq.answer}
                   </Text>
                 </Accordion.Panel>

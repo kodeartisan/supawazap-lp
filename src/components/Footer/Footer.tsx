@@ -35,12 +35,13 @@ const Logo = () => (
       size={"xl"}
       c="white"
       style={{
+        fontSize: rem(28),
         letterSpacing: "-0.02em",
         transition: "all 0.3s ease",
       }}
     >
       Supa
-      <Text span c="emerald.5" fw={"bold"} size="xl">
+      <Text span c="emerald.5" fw={"bold"} inherit>
         wazap
       </Text>
     </Text>
@@ -115,7 +116,7 @@ export function Footer() {
           {/* KOLOM 1: BRAND IDENTITY */}
           <Stack gap="lg">
             <Logo />
-            <Text c="dimmed" size="sm" lh={1.6} maw={300}>
+            <Text c="dimmed" size="lg" lh={1.6} maw={350}>
               The ultimate local-first WhatsApp CRM and automation tool.
               Supercharge your workflow without compromising privacy.
             </Text>
@@ -127,7 +128,7 @@ export function Footer() {
                   key={index}
                   variant="subtle"
                   color="gray"
-                  size="lg"
+                  size="xl"
                   radius="md"
                   component="a"
                   href={item.link}
@@ -157,7 +158,7 @@ export function Footer() {
           {/* KOLOM 2 & 3: LINKS */}
           {FOOTER_DATA.map((group) => (
             <Stack key={group.title} gap="md">
-              <Text c="white" fw={700} size="sm" tt="uppercase">
+              <Text c="white" fw={700} size="lg" tt="uppercase">
                 {group.title}
               </Text>
               <Stack gap="sm">
@@ -166,7 +167,7 @@ export function Footer() {
                     key={link.label}
                     href={link.link}
                     c="dimmed"
-                    size="sm"
+                    size="md"
                     underline="never"
                     style={{
                       transition: "color 0.2s, transform 0.2s",

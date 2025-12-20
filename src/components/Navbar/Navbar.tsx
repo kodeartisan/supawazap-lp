@@ -37,12 +37,13 @@ const Logo = ({ compact }: { compact?: boolean }) => (
       size={"xl"}
       c="white"
       style={{
+        fontSize: rem(28),
         letterSpacing: "-0.02em",
         transition: "all 0.3s ease",
       }}
     >
       Supa
-      <Text span c="emerald.5" fw={"bold"} size="xl">
+      <Text span c="emerald.5" fw={"bold"} inherit>
         wazap
       </Text>
     </Text>
@@ -99,11 +100,11 @@ export function Navbar() {
           key={link.label}
           href={link.link}
           style={{
-            fontSize: rem(16),
-            fontWeight: 500,
+            fontSize: rem(18),
+            fontWeight: 600,
             color: "var(--text-secondary)",
             transition: "all 0.2s ease",
-            padding: "6px 16px",
+            padding: "8px 20px",
             borderRadius: "99px",
             textDecoration: "none",
           }}
@@ -126,14 +127,14 @@ export function Navbar() {
         key={link.label}
         onClick={(e) => isAnchor && handleSmoothScroll(e, link.link)}
         style={{
-          fontSize: rem(16),
-          fontWeight: 500,
+          fontSize: rem(18),
+          fontWeight: 600,
           color:
             active === link.link
               ? "var(--brand-emerald-400)"
               : "var(--text-secondary)",
           transition: "all 0.2s ease",
-          padding: "6px 16px",
+          padding: "8px 20px",
           borderRadius: "99px",
         }}
         onMouseEnter={(e) => {
@@ -203,15 +204,16 @@ export function Navbar() {
               <Button
                 variant="filled"
                 color="emerald"
-                size={scrolled ? "xs" : "sm"}
+                size={scrolled ? "sm" : "md"}
                 radius="xl"
-                leftSection={<Chrome size={scrolled ? 14 : 16} />}
+                leftSection={<Chrome size={scrolled ? 18 : 20} />}
                 visibleFrom="xs"
                 className="btn-primary-action" // Menggunakan class premium yang kita bahas sebelumnya
                 style={{
-                  height: scrolled ? 32 : 40,
+                  height: scrolled ? 40 : 48,
                   transition: "all 0.3s ease",
-                  fontSize: scrolled ? 13 : 14,
+                  fontSize: scrolled ? 14 : 16,
+                  fontWeight: 600,
                 }}
               >
                 Install Free

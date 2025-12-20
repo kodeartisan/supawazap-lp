@@ -145,15 +145,24 @@ export function SecondaryFeatures() {
         <Stack align="center" mb={{ base: 40, md: 80 }}>
           <Title
             order={2}
-            ta="center"
-            style={{ fontSize: rem(42) }}
-            className="text-gradient"
+            className="text-gradient" // Menggunakan class global Anda
+            style={{
+              fontSize: rem(60),
+              fontWeight: 800,
+              lineHeight: 1.1,
+            }}
           >
-            Built for Speed, Designed for Results
+            The Swiss Army Knife for WhatsApp.
           </Title>
-          <Text c="dimmed" ta="center" maw={600} size="lg">
-            Powerful utilities that save hours every day—all included in one
-            extension.
+          <Text
+            c="dimmed"
+            ta="center"
+            maw={700}
+            size="xl"
+            style={{ lineHeight: 1.6 }}
+          >
+            Why install multiple extensions? Get every utility you need for
+            WhatsApp marketing in a single, lightweight package.
           </Text>
         </Stack>
 
@@ -170,7 +179,7 @@ export function SecondaryFeatures() {
                 <Box>
                   <Group justify="space-between" align="start" mb="md">
                     <ThemeIcon
-                      size={50}
+                      size={60}
                       radius="md"
                       variant="light"
                       color="gray"
@@ -180,13 +189,13 @@ export function SecondaryFeatures() {
                         color: "#fff",
                       }}
                     >
-                      <Text style={{ fontSize: rem(26) }}>{feature.emoji}</Text>
+                      <Text style={{ fontSize: rem(32) }}>{feature.emoji}</Text>
                     </ThemeIcon>
                     {feature.comingSoon && (
                       <Badge
                         variant="light"
                         color="orange"
-                        size="sm"
+                        size="md"
                         style={{
                           backgroundColor: "rgba(251, 146, 60, 0.1)",
                           color: "#fb923c",
@@ -197,10 +206,10 @@ export function SecondaryFeatures() {
                       </Badge>
                     )}
                   </Group>
-                  <Text fz="lg" fw={600} mb="xs" c="white">
+                  <Text fz={22} fw={700} mb="xs" c="white">
                     {feature.title}
                   </Text>
-                  <Text c="dimmed" size="sm" lh={1.6}>
+                  <Text c="dimmed" size="md" lh={1.6}>
                     {feature.description}
                   </Text>
                 </Box>

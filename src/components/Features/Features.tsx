@@ -74,12 +74,18 @@ export function Features() {
           <Title
             order={2}
             ta="center"
-            style={{ fontSize: rem(42) }}
+            style={{ fontSize: rem(60) }}
             className="text-gradient"
           >
             Automate. Organize. Scale.
           </Title>
-          <Text c="dimmed" ta="center" maw={600} size="lg">
+          <Text
+            c="dimmed"
+            ta="center"
+            maw={700}
+            size="xl"
+            style={{ lineHeight: 1.6 }}
+          >
             Built for power users who need more than just a chat app. Experience
             the next evolution of WhatsApp Web.
           </Text>
@@ -99,14 +105,14 @@ export function Features() {
             >
               {/* Text Content */}
               <Stack style={{ flex: 1 }}>
-                <Title order={2} style={{ fontSize: rem(35), fontWeight: 700 }}>
+                <Title order={2} style={{ fontSize: rem(42), fontWeight: 800 }}>
                   {feature.title}
                 </Title>
                 <Text
                   c="dimmed"
-                  size="lg"
+                  size="xl"
                   mt="md"
-                  style={{ fontSize: rem(20) }}
+                  style={{ fontSize: rem(22), lineHeight: 1.6 }}
                 >
                   {feature.description}
                 </Text>
@@ -123,7 +129,12 @@ export function Features() {
                 >
                   {feature.points.map((point, idx) => (
                     <List.Item key={idx} c="white">
-                      <Text span c="gray.3">
+                      <Text
+                        span
+                        c="gray.3"
+                        size="lg"
+                        style={{ lineHeight: 1.6 }}
+                      >
                         {point}
                       </Text>
                     </List.Item>

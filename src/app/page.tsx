@@ -61,7 +61,7 @@ export default function Home() {
         }}
       />
       <Navbar />
-      <Container size="xl" mt={135} style={{ position: "relative", zIndex: 1 }}>
+      <Container size="xl" mt={150} style={{ position: "relative", zIndex: 1 }}>
         <Stack gap="xl" align="center">
           {/* Hero Title */}
           <Title
@@ -75,7 +75,7 @@ export default function Home() {
               textAlign: "center",
             }}
           >
-            WhatsApp Web with Superpowers <br />
+            Your Complete WhatsApp Marketing Stack <br />
             <Text
               span
               inherit
@@ -114,9 +114,9 @@ export default function Home() {
             maw={700}
             style={{ fontSize: rem(26), lineHeight: 1.6 }}
           >
-            Turn WhatsApp into your most productive channel with Smart
-            Broadcasting, Workflow Automation, and an integrated CRM that keeps
-            you organized 24/7, all without leaving your browser.
+            One extension to replace your CRM, Auto-reply Bot, and Bulk Sender.
+            Organize leads, automate follow-ups, and broadcast messages without
+            switching tabs.
           </Text>
 
           {/* CTA Group */}
@@ -220,10 +220,10 @@ export default function Home() {
 
         <Stats />
       </Container>
-      <Features />
+      {/* <Features /> */}
       <SecondaryFeatures />
       {/* <PainVsGain /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Pricing />
       {/* <FeaturedOn /> */}
 

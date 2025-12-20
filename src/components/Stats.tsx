@@ -16,7 +16,7 @@ export function Stats() {
           ta="center"
           className="text-gradient"
           style={{
-            fontSize: rem(42),
+            fontSize: rem(60),
             fontWeight: 800,
             lineHeight: 1.1,
           }}
@@ -27,7 +27,7 @@ export function Stats() {
           c="dimmed"
           ta="center"
           maw={700}
-          style={{ fontSize: rem(20), lineHeight: 1.6 }}
+          style={{ fontSize: rem(22), lineHeight: 1.6 }}
         >
           Don't let your hard work end up in the spam folder. Compare the raw
           power of WhatsApp marketing against traditional email campaigns.
@@ -40,7 +40,7 @@ export function Stats() {
             <Text
               fw={800}
               style={{
-                fontSize: rem(56),
+                fontSize: rem(80),
                 lineHeight: 1,
                 letterSpacing: "-0.02em",
                 color: "#10b981", // Emerald-500 matching the theme
@@ -53,7 +53,7 @@ export function Stats() {
               c="dimmed"
               fw={600}
               mt="xs"
-              style={{ fontSize: rem(18) }}
+              style={{ fontSize: rem(20) }}
             >
               {stat.label}
             </Text>

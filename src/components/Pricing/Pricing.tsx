@@ -15,6 +15,7 @@ import {
   Title,
   rem,
   Badge,
+  Avatar,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
 
@@ -58,14 +59,14 @@ export function Pricing() {
               order={2}
               className="text-gradient" // Menggunakan class global Anda
               style={{
-                fontSize: rem(48),
+                fontSize: rem(60),
                 fontWeight: 800,
                 lineHeight: 1.1,
               }}
             >
               Limited Time Offer – Save $70!
             </Title>
-            <Text c="dimmed" size="lg">
+            <Text c="dimmed" size="xl" mt="md" fw={500}>
               Get lifetime access to all Supawazap Pro tools for just $29
             </Text>
           </Stack>
@@ -150,14 +151,14 @@ export function Pricing() {
                     td="line-through"
                     c="dimmed"
                     fw={500}
-                    style={{ fontSize: rem(32) }}
+                    style={{ fontSize: rem(42) }}
                   >
                     $99
                   </Text>
                   <Text
                     fw={800}
                     style={{
-                      fontSize: rem(80),
+                      fontSize: rem(100),
                       lineHeight: 1,
                       // Gradient Text sesuai theme
                       background:
@@ -225,17 +226,17 @@ export function Pricing() {
                   icon={
                     <ThemeIcon
                       color="emerald"
-                      size={24}
+                      size={28}
                       radius="xl"
                       variant="light"
                     >
-                      <Icon icon="tabler:check" width={14} strokeWidth={4} />
+                      <Icon icon="tabler:check" width={18} strokeWidth={4} />
                     </ThemeIcon>
                   }
                 >
                   {FEATURES.map((feature, index) => (
                     <List.Item key={index}>
-                      <Text size="md" c="gray.3">
+                      <Text size="lg" c="gray.3" fw={500}>
                         {feature}
                       </Text>
                     </List.Item>
@@ -263,13 +264,103 @@ export function Pricing() {
                 <Group justify="center" gap={6} mt={4}>
                   <Icon icon="tabler:shield-check" color="#34d399" width={16} />
                   <Text size="xs" c="dimmed">
-                    30-day money-back guarantee • Secure checkout via Lemon
+                    7-day money-back guarantee • Secure checkout via Lemon
                     Squeezy
                   </Text>
                 </Group>
               </Stack>
             </Stack>
           </Card>
+
+          {/* Premium Testimonial */}
+          <Paper
+            p="xl"
+            radius="xl"
+            w="100%"
+            style={{
+              background:
+                "linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(10px)",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {/* Decorative Quote Icon Background */}
+            <Icon
+              icon="tabler:quote"
+              color="white"
+              style={{
+                position: "absolute",
+                top: 20,
+                right: 20,
+                opacity: 0.03,
+                fontSize: 120,
+                transform: "rotate(10deg)",
+              }}
+            />
+
+            <Stack gap="lg" style={{ position: "relative", zIndex: 1 }}>
+              {/* Stars & Verification */}
+              <Group justify="space-between">
+                <Group gap={4}>
+                  {[...Array(5)].map((_, i) => (
+                    <ThemeIcon
+                      key={i}
+                      variant="light"
+                      color="yellow"
+                      size="sm"
+                      radius="xl"
+                      style={{
+                        backgroundColor: "rgba(250, 204, 21, 0.1)",
+                      }}
+                    >
+                      <Icon
+                        icon="tabler:star-filled"
+                        color="#facc15"
+                        width={12}
+                      />
+                    </ThemeIcon>
+                  ))}
+                </Group>
+              </Group>
+
+              {/* Quote */}
+              <Text
+                size="xl"
+                c="white"
+                fw={500}
+                style={{ lineHeight: 1.4, fontStyle: "italic" }}
+              >
+                "Stopped paying $50/month for separate CRM and broadcast tools.
+                Supawazap replaced them both with a single lifetime payment.{" "}
+                <Text
+                  span
+                  c="emerald.4"
+                  inherit
+                  style={{
+                    textDecoration: "underline",
+                    textDecorationColor: "rgba(52, 211, 153, 0.3)",
+                  }}
+                >
+                  Unbeatable value for my agency.
+                </Text>
+                "
+              </Text>
+
+              {/* Author Profile */}
+              <Box>
+                <Stack gap={0}>
+                  <Text size="lg" fw={700} c="white">
+                    Michael Ross
+                  </Text>
+                  <Text size="md" c="dimmed">
+                    Digital Marketing Director
+                  </Text>
+                </Stack>
+              </Box>
+            </Stack>
+          </Paper>
         </Stack>
       </Container>
     </Box>

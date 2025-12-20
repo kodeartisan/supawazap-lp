@@ -62,7 +62,7 @@ export function CTA() {
                 order={2}
                 className="text-gradient"
                 style={{
-                  fontSize: rem(48),
+                  fontSize: rem(60),
                   fontWeight: 800,
                   lineHeight: 1.1,
                   letterSpacing: "-0.02em",
@@ -83,10 +83,10 @@ export function CTA() {
               className="btn-primary-action"
               leftSection={<Icon icon="logos:chrome" fontSize={24} />}
               style={{
-                height: rem(64),
-                fontSize: rem(20),
-                paddingLeft: rem(40),
-                paddingRight: rem(40),
+                height: rem(72),
+                fontSize: rem(22),
+                paddingLeft: rem(48),
+                paddingRight: rem(48),
               }}
             >
               Add to Chrome - It's Free
