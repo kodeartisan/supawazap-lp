@@ -19,8 +19,56 @@ import { PremiumCard } from "../PremiumCard";
 
 const secondaryFeatures = [
   {
+    emoji: "📇",
+    title: "Contact Management",
+    description:
+      "Manage your leads. View detailed profiles, assign tags, and keep your contact list organized directly inside WhatsApp.",
+  },
+  {
+    emoji: "🚀",
+    title: "Workflow Automation",
+    description:
+      "Build no-code chatbots. Visually create flows with triggers, keyword auto-replies, and actions to automate conversations 24/7.",
+  },
+  {
+    emoji: "📡",
+    title: "Smart Broadcast",
+    description:
+      "Reach thousands instantly. Send personalized campaigns with schedule, batching, and spintax to avoid spam detection.",
+  },
+  {
+    emoji: "🎯",
+    title: "Smart Segment",
+    description:
+      "Target the right audience. Create dynamic rules to filter contacts by tags, country, or activity for laser-focused campaigns.",
+  },
+  {
+    emoji: "🔧",
+    title: "Custom Field",
+    description:
+      "Go beyond names. Store personalized data like Order IDs or preferences to segment your audience effectively.",
+  },
+  {
+    emoji: "🤖",
+    title: "Post Broadcast",
+    description:
+      "Automate after sending. Trigger actions like adding tags, updating fields, or sending follow-ups based on delivery status.",
+  },
+  {
+    emoji: "📝",
+    title: "Notes & History",
+    description:
+      "Track every interaction. Add private notes to customer profiles to remember important details and history.",
+  },
+  {
+    emoji: "🧩",
+    title: "Message Templates",
+    description:
+      "Save time on rewriting. Create reusable templates with media, buttons, and variables for faster communication.",
+  },
+  {
     emoji: "⚡",
-    title: "Smart Quick Replies",
+    title: "Quick Reply",
     description:
       "Reply in milliseconds. Save text, image, video, or PDF templates and send them with a single click.",
   },
@@ -29,6 +77,12 @@ const secondaryFeatures = [
     title: "Status Scheduler",
     description:
       "Automate your 'Story Selling'. Schedule WhatsApp Status updates (Text/Media) for the entire week in advance.",
+  },
+  {
+    emoji: "🏷️",
+    title: "Smart Tags",
+    description:
+      "Organize contacts with unlimited color-coded tags. Filter and broadcast to specific segments instantly.",
   },
   {
     emoji: "👥",
@@ -48,12 +102,7 @@ const secondaryFeatures = [
     description:
       "Clean your database. Bulk validate thousands of numbers to separate active accounts from invalid ones before broadcasting.",
   },
-  {
-    emoji: "📂",
-    title: "Bulk Chat Manager",
-    description:
-      "Achieve Inbox Zero instantly. Archive, Pin, or Mute hundreds of chats at once to keep your workspace organized.",
-  },
+
   {
     emoji: "🔒",
     title: "Privacy Blur",
@@ -73,23 +122,12 @@ const secondaryFeatures = [
       "Turn traffic into chats. Generate custom `wa.me` links with pre-filled messages for your ads and social bio.",
   },
   {
-    emoji: "📥",
-    title: "Full Data Export",
-    description:
-      "You own your data. Export chat history, group members, or CRM contacts to Excel (XLSX), CSV, or JSON anytime.",
-  },
-  {
     emoji: "🔀",
     title: "Spintax Engine",
     description:
       "Avoid spam detection. Automatically randomize greetings and phrases (e.g., {Hi|Hello}) so every message looks unique.",
   },
-  {
-    emoji: "🎯",
-    title: "Smart Filter Segments",
-    description:
-      "Target the right audience. Create dynamic rules to filter contacts by tags, country, or activity for laser-focused campaigns.",
-  },
+
   {
     emoji: "😀",
     title: "Emoji & Formatting",
@@ -98,43 +136,27 @@ const secondaryFeatures = [
   },
   {
     emoji: "⏰",
-    title: "Personal Message Scheduler",
+    title: "Schedule Message",
     description:
-      "Never miss a follow-up. Schedule messages for individual chats to be delivered automatically at a future time.",
+      "Never miss a follow-up. Draft messages now and schedule them to be sent automatically at a precise future date and time.",
   },
   {
-    emoji: "✨",
-    title: "AI Writer Assistant",
+    emoji: "📂",
+    title: "Bulk Chat Archiver",
     description:
-      "Your personal writing genius. Fix grammar, rewrite text, or change the tone of your messages instantly before sending.",
-    comingSoon: true,
+      "Declutter your inbox. Archive inactive chats in bulk to keep your workspace focused on what matters.",
   },
   {
-    emoji: "📁",
-    title: "Custom Chat Tabs",
+    emoji: "📌",
+    title: "Bulk Pin Manager",
     description:
-      "Organize your chaos. Create custom tabs (Labels) like 'Leads', 'VIP', or 'Family' to categorize your chats for easy access.",
-    comingSoon: true,
+      "Prioritize key conversations. Pin multiple chats to the top at once so you never lose track of VIPs.",
   },
   {
-    emoji: "📢",
-    title: "Group Link Manager",
+    emoji: "🔇",
+    title: "Bulk Mute Manager",
     description:
-      "Track and manage your group invite links efficiently. Monitor traffic and join requests from a single dashboard.",
-    comingSoon: true,
-  },
-  {
-    emoji: "🌐",
-    title: "AI Translate",
-    description: "Break language barriers. Translation for incoming messages.",
-    comingSoon: true,
-  },
-  {
-    emoji: "💾",
-    title: "Chat Backup",
-    description:
-      "Secure your business data. Automatically backup chats, media, and contacts to your computer or cloud storage.",
-    comingSoon: true,
+      "Silence the noise. Mute noisy groups or contacts in bulk to regain your focus and productivity.",
   },
 ];
 
@@ -216,7 +238,7 @@ export function SecondaryFeatures() {
               </Stack>
 
               {/* Hover Overlay - Temporarily disabled */}
-              {/* <Box
+              <Box
                 className="feature-overlay"
                 style={{
                   position: "absolute",
@@ -244,7 +266,7 @@ export function SecondaryFeatures() {
                 >
                   View Demo
                 </Button>
-              </Box> */}
+              </Box>
             </PremiumCard>
           ))}
         </SimpleGrid>
