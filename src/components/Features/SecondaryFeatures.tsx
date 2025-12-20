@@ -32,9 +32,15 @@ const secondaryFeatures = [
   },
   {
     emoji: "👥",
-    title: "Community Scraper",
+    title: "Group Member Scraper",
     description:
-      "Turn groups into leads. Extract member data from WhatsApp Groups and Communities to build your marketing database.",
+      "Turn groups into leads. Extract members from multiple groups at once, optionally include admins, and export to CSV or Excel.",
+  },
+  {
+    emoji: "📒",
+    title: "Contact Scraper",
+    description:
+      "Export your network. Filter contacts by type (Saved/Unsaved), account status (Business/Personal), or unread messages.",
   },
   {
     emoji: "✅",

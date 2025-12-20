@@ -1,24 +1,20 @@
-"use client";
-
 import {
   Box,
   Button,
   Container,
-  Group,
   Stack,
   Text,
   Title,
   rem,
+  Group,
   ThemeIcon,
-  Paper,
-  Badge,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
 
 export function CTA() {
   return (
-    <Box py={{ base: 60, md: 120 }} px="md" style={{ position: "relative" }}>
-      {/* Ambient Background Glow - Memberikan kedalaman di belakang kartu */}
+    <Box py={{ base: 80, md: 120 }} style={{ position: "relative" }}>
+      {/* Background Decor */}
       <Box
         style={{
           position: "absolute",
@@ -26,143 +22,158 @@ export function CTA() {
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: "100%",
-          maxWidth: "900px",
-          height: "500px",
+          height: "100%",
           background:
-            "radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%)",
-          filter: "blur(60px)",
+            "radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
           zIndex: 0,
           pointerEvents: "none",
         }}
       />
 
       <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
-        <Paper
-          radius={32}
+        <Box
           p={{ base: 40, md: 80 }}
           style={{
-            // Premium Dark Glass Background
-            backgroundColor: "rgba(2, 6, 23, 0.7)", // Very dark slate (almost black)
-            backdropFilter: "blur(24px) saturate(180%)",
-            WebkitBackdropFilter: "blur(24px) saturate(180%)",
-            // Gradient Border halus
-            border: "1px solid rgba(255, 255, 255, 0.08)",
-            boxShadow:
-              "0 0 0 1px rgba(16, 185, 129, 0.1), 0 20px 60px -20px rgba(0, 0, 0, 0.5)",
-            position: "relative",
+            borderRadius: rem(32),
+            backgroundColor: "rgba(255, 255, 255, 0.03)",
+            border: "1px solid rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(10px)",
+            textAlign: "center",
             overflow: "hidden",
+            position: "relative",
           }}
         >
-          {/* --- DECORATIVE: BACKGROUND GRID PATTERN --- */}
-          <Box
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage:
-                "linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-              opacity: 0.4,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* --- DECORATIVE: TOP GLOW BEAM --- */}
+          {/* Inner Glow */}
           <Box
             style={{
               position: "absolute",
               top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "60%",
+              left: "0",
+              right: "0",
               height: "1px",
               background:
-                "linear-gradient(90deg, transparent, #10b981, transparent)",
-              boxShadow: "0 0 30px 2px rgba(16, 185, 129, 0.4)",
+                "linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent)",
             }}
           />
 
-          {/* --- CONTENT --- */}
-          <Stack
-            align="center"
-            gap="xl"
-            style={{ position: "relative", zIndex: 2 }}
-          >
-            {/* Headline */}
-            <Title
-              order={2}
-              ta="center"
+          <Stack align="center" gap="xl">
+            <Stack gap="xs">
+              <Title
+                order={2}
+                className="text-gradient"
+                style={{
+                  fontSize: rem(48),
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Stop Wasting Time on Manual Chats.
+              </Title>
+              <Text c="dimmed" size="xl" maw={600} mx="auto">
+                Automate your daily WhatsApp routine. From smart broadcasts to
+                quick replies, let Supawazap handle the busywork so you can
+                focus on growing your business.
+              </Text>
+            </Stack>
+
+            <Button
+              size="xl"
+              radius="xl"
+              className="btn-primary-action"
+              leftSection={<Icon icon="logos:chrome" fontSize={24} />}
               style={{
-                fontSize: rem(52), // Lebih besar
-                fontWeight: 800,
-                lineHeight: 1.1,
-                color: "white",
-                letterSpacing: "-0.02em",
+                height: rem(64),
+                fontSize: rem(20),
+                paddingLeft: rem(40),
+                paddingRight: rem(40),
               }}
             >
-              10x Your Workflow. <br />
-              <Text
-                span
-                inherit
-                style={{
-                  // Gradient Text Emerald Premium
-                  background:
-                    "linear-gradient(to right, #6ee7b7, #10b981, #34d399)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  filter: "drop-shadow(0 0 20px rgba(16, 185, 129, 0.3))",
-                }}
-              >
-                Zero Extra Effort.
-              </Text>
-            </Title>
+              Add to Chrome - It's Free
+            </Button>
 
-            {/* Subtext */}
-            <Text c="dimmed" ta="center" maw={600} size="xl" lh={1.6}>
-              Ditch the manual copy-pasting. Automate your follow-ups, organize
-              your leads, and reclaim 10+ hours of your week.
-            </Text>
+            {/* Social Proof Pill */}
+            <Box
+              mt="md"
+              py={10}
+              px={24}
+              style={{
+                borderRadius: 999,
+                backgroundColor: "rgba(255, 255, 255, 0.03)",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                display: "inline-block",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+              }}
+            >
+              <Group gap="xl" wrap="wrap" justify="center">
+                {/* No Credit Card */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">💳</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    No credit card
+                  </Text>
+                </Group>
 
-            {/* Action Buttons */}
-            <Group mt="md" gap="md">
-              <Button
-                size="xl"
-                radius="xl"
-                h={60}
-                className="btn-primary-action" // Menggunakan class global yang sudah ada
-                leftSection={<Icon icon="logos:chrome" fontSize={24} />}
-                style={{
-                  fontSize: rem(18),
-                  paddingLeft: rem(32),
-                  paddingRight: rem(32),
-                }}
-              >
-                Get Supawazap for Chrome
-              </Button>
-            </Group>
+                {/* Divider */}
+                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
 
-            {/* Trust Signals / Footer Text */}
-            <Group gap="xl" mt="sm" c="dimmed" style={{ opacity: 0.7 }}>
-              <Group gap={6}>
-                <Icon icon="tabler:bolt" color="#10b981" width={18} />
-                <Text size="sm">2-Minute Setup</Text>
+                {/* No Sign Up */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">👤</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    No sign up
+                  </Text>
+                </Group>
+
+                {/* Divider */}
+                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
+
+                {/* Trusted */}
+                <Group gap={8}>
+                  <ThemeIcon
+                    size={22}
+                    color="gray"
+                    variant="light"
+                    radius="xl"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    <Text size="xs">⭐</Text>
+                  </ThemeIcon>
+                  <Text size="sm" c="gray.2" fw={500}>
+                    Trusted by{" "}
+                    <Text span fw={700} c="white">
+                      Professionals
+                    </Text>
+                  </Text>
+                </Group>
               </Group>
-
-              <Box w={1} h={16} bg="rgba(255,255,255,0.1)" />
-
-              <Group gap={6}>
-                <Icon icon="tabler:shield-lock" color="#10b981" width={18} />
-                <Text size="sm">100% Secure</Text>
-              </Group>
-
-              <Box w={1} h={16} bg="rgba(255,255,255,0.1)" />
-
-              <Group gap={6}>
-                <Icon icon="tabler:circle-check" color="#10b981" width={18} />
-                <Text size="sm">Cancel Anytime</Text>
-              </Group>
-            </Group>
+            </Box>
           </Stack>
-        </Paper>
+        </Box>
       </Container>
     </Box>
   );

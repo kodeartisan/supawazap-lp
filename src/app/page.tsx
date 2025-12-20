@@ -1,4 +1,5 @@
 import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
+import { CTA } from "@/components/CTA";
 import { FAQ } from "@/components/FAQ/FAQ";
 import { FeaturedOn } from "@/components/FeaturedOn/FeaturedOn";
 import { Features } from "@/components/Features/Features";
@@ -7,6 +8,8 @@ import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { PainVsGain } from "@/components/PainVsGain/PainVsGain";
 import { Pricing } from "@/components/Pricing/Pricing";
+import { Problems } from "@/components/Problems";
+import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import { Typewriter } from "@/components/Typewriter";
 import { Icon } from "@iconify/react";
@@ -57,9 +60,7 @@ export default function Home() {
           pointerEvents: "none",
         }}
       />
-
       <Navbar />
-
       <Container size="xl" mt={135} style={{ position: "relative", zIndex: 1 }}>
         <Stack gap="xl" align="center">
           {/* Hero Title */}
@@ -113,9 +114,9 @@ export default function Home() {
             maw={700}
             style={{ fontSize: rem(26), lineHeight: 1.6 }}
           >
-            The only local-first extension that combines Smart Broadcasting,
-            Visual Workflow Automation, and Deep CRM features, without
-            compromising privacy.
+            Turn WhatsApp into your most productive channel with Smart
+            Broadcasting, Workflow Automation, and an integrated CRM that keeps
+            you organized 24/7, all without leaving your browser.
           </Text>
 
           {/* CTA Group */}
@@ -188,10 +189,10 @@ export default function Home() {
                 </Group>
 
                 {/* Divider */}
-                {/* <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" /> */}
+                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
 
                 {/* Trusted */}
-                {/* <Group gap={8}>
+                <Group gap={8}>
                   <ThemeIcon
                     size={22}
                     color="gray"
@@ -209,7 +210,7 @@ export default function Home() {
                       Professionals
                     </Text>
                   </Text>
-                </Group> */}
+                </Group>
               </Group>
             </Box>
           </Stack>
@@ -217,115 +218,17 @@ export default function Home() {
 
         <BrowserMockup />
 
-        {/* Feature Highlights Section */}
-        <Box
-          p={"sm"}
-          style={{
-            position: "relative",
-            background:
-              "linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(16, 185, 129, 0.03) 100%)",
-            backdropFilter: "blur(40px)",
-            WebkitBackdropFilter: "blur(40px)",
-            border: "1px solid rgba(16, 185, 129, 0.15)",
-            borderRadius: rem(40),
-            boxShadow:
-              "0 0 80px -20px rgba(16, 185, 129, 0.2), 0 30px 60px -20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
-            overflow: "hidden",
-          }}
-        >
-          {/* Decorative glow orb */}
-          <Box
-            style={{
-              position: "absolute",
-              top: -100,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: 300,
-              height: 300,
-              background:
-                "radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
-              pointerEvents: "none",
-              zIndex: 0,
-            }}
-          />
-
-          <SimpleGrid
-            cols={{ base: 2, md: 4 }}
-            style={{ position: "relative", zIndex: 1 }}
-          >
-            {[
-              {
-                emoji: "🔒",
-                title: "Local-First Privacy",
-                description: "Your data stays on your device. We never see it.",
-              },
-              {
-                emoji: "🚀",
-                title: "Supercharge WhatsApp",
-                description: "The ultimate toolkit for WhatsApp power users.",
-              },
-              {
-                emoji: "⭐",
-                title: "One-Time Payment",
-                description: "Buy once, use forever. No recurring fees.",
-              },
-              {
-                emoji: "🌐",
-                title: "Works Everywhere",
-                description:
-                  "Compatible with Chrome, Edge, Brave, and Opera browsers.",
-              },
-            ].map((item, index) => (
-              <Stack key={index} align="center" gap={"xs"} ta="center">
-                <Box
-                  style={{
-                    width: 90,
-                    height: 90,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background:
-                      "radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 60%)",
-                    borderRadius: "50%",
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: rem(48),
-                      filter: "drop-shadow(0 0 15px rgba(16, 185, 129, 0.5))",
-                    }}
-                  >
-                    {item.emoji}
-                  </Text>
-                </Box>
-                <Text
-                  fw={700}
-                  size="lg"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #fff 0%, #a7f3d0 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  {item.title}
-                </Text>
-                <Text c="gray.5" size="sm" maw={200}>
-                  {item.description}
-                </Text>
-              </Stack>
-            ))}
-          </SimpleGrid>
-        </Box>
+        <Stats />
       </Container>
-
       <Features />
       <SecondaryFeatures />
       {/* <PainVsGain /> */}
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Pricing />
-      <FeaturedOn />
+      {/* <FeaturedOn /> */}
+
       <FAQ />
+      <CTA />
       <Footer />
     </Box>
   );
