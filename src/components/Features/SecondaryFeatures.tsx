@@ -14,7 +14,6 @@ import {
   Button,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
-import { SpotlightCard } from "../SpotlightCard"; // Import komponen baru
 import { PremiumCard } from "../PremiumCard";
 
 const secondaryFeatures = [
@@ -23,12 +22,14 @@ const secondaryFeatures = [
     title: "Contact Management",
     description:
       "Manage your leads. View detailed profiles, assign tags, and keep your contact list organized directly inside WhatsApp.",
+    youtubeId: "sXNYEokjgO8",
   },
   {
     emoji: "🚀",
     title: "Workflow Automation",
     description:
       "Build no-code chatbots. Visually create flows with triggers, keyword auto-replies, and actions to automate conversations 24/7.",
+    youtubeId: "dQw4w9WgXcQ",
   },
   {
     emoji: "📡",
@@ -160,7 +161,12 @@ const secondaryFeatures = [
   },
 ];
 
+import { useState } from "react";
+import { Modal } from "@mantine/core";
+
 export function SecondaryFeatures() {
+  const [activeFeature, setActiveFeature] = useState<any | null>(null);
+
   return (
     <Box py={100} style={{ position: "relative", zIndex: 1 }}>
       <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
@@ -237,7 +243,7 @@ export function SecondaryFeatures() {
                 </Box>
               </Stack>
 
-              {/* Hover Overlay - Temporarily disabled */}
+              {/* Hover Overlay */}
               <Box
                 className="feature-overlay"
                 style={{
@@ -259,18 +265,119 @@ export function SecondaryFeatures() {
                   radius="xl"
                   className="btn-primary-action view-demo-btn"
                   leftSection={<Icon icon="tabler:eye" width={18} />}
+                  onClick={() => setActiveFeature(feature)}
                   style={{
                     transform: "translateY(10px)",
                     transition: "transform 0.2s ease",
                   }}
                 >
-                  View Demo
+                  Watch Demo
                 </Button>
               </Box>
             </PremiumCard>
           ))}
         </SimpleGrid>
       </Container>
+
+      {/* Video Modal */}
+      <Modal
+        opened={!!activeFeature}
+        onClose={() => setActiveFeature(null)}
+        title={
+          <Group gap="xs">
+            <Text size="xl">{activeFeature?.emoji}</Text>
+            <Text fw={700} size="lg" c="white">
+              {activeFeature?.title}
+            </Text>
+          </Group>
+        }
+        size="70%"
+        centered
+        padding={0} // Remove default padding to let video/footer touch edges
+        overlayProps={{
+          backgroundOpacity: 0.55,
+          blur: 3,
+        }}
+        styles={{
+          content: {
+            backgroundColor: "#1A1B1E",
+            border: "1px solid rgba(255,255,255,0.1)",
+            overflow: "hidden", // Ensure footer radius works
+          },
+          header: {
+            backgroundColor: "#1A1B1E",
+            color: "white",
+            padding: "16px 20px",
+          },
+          body: {
+            padding: 0, // Custom padding for body parts
+          },
+          close: {
+            color: "white",
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,0.1)",
+            },
+          },
+        }}
+      >
+        <Stack gap={0}>
+          {/* Video Section */}
+          <Box
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%", // 16:9 Aspect Ratio
+              backgroundColor: "#000",
+            }}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${
+                activeFeature?.youtubeId || "dQw4w9WgXcQ"
+              }?autoplay=1&mute=1`} // Dynamic ID with fallback
+              title="Video Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          </Box>
+
+          {/* Footer Section - Matches the screenshot layout */}
+          <Group
+            justify="space-between"
+            align="center"
+            p="md"
+            style={{
+              backgroundColor: "#25262B", // Slightly lighter dark background for footer
+              borderTop: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <Text c="dimmed" size="sm" style={{ flex: 1, lineHeight: 1.4 }}>
+              {activeFeature?.description}
+            </Text>
+            <Button
+              component="a"
+              href="https://chromewebstore.google.com/detail/supawazap/jbbjnkkhhlgglfcpcngjfkjjmldkphgl"
+              target="_blank"
+              // color="emerald" // Theme primary is emerald, so default is fine, but being explicit is safe.
+              // radius="xl"    // Theme default is xl.
+              // Let's rely on theme defaults where possible, but I will explicitly set it to match the "Install" buttons elsewhere which are likely emerald.
+              color="emerald"
+              size="md"
+              radius="xl"
+            >
+              Install
+            </Button>
+          </Group>
+        </Stack>
+      </Modal>
     </Box>
   );
 }
