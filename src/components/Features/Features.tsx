@@ -39,6 +39,30 @@ const features = [
       "Reach thousands instantly. Send personalized campaigns with schedule, batching, and spintax to avoid spam detection.",
   },
   {
+    emoji: "🤖",
+    title: "Post Broadcast",
+    description:
+      "Automate after sending. Trigger actions like adding tags, updating fields, or sending follow-ups based on delivery status.",
+  },
+  {
+    emoji: "💾",
+    title: "Smart Lists",
+    description:
+      "Save recipient groups for quick reuse. Load entire contact lists like 'Webinar Attendees' or 'VIP Clients' in one click for your next broadcast.",
+  },
+  {
+    emoji: "📋",
+    title: "Live Delivery Reports",
+    description:
+      "Monitor delivery status real-time. See who received, failed, or is pending. Retry failed messages and export detailed reports to CSV/Excel.",
+  },
+  {
+    emoji: "⏰",
+    title: "Schedule Message",
+    description:
+      "Never miss a follow-up. Draft messages now and schedule them to be sent automatically at a precise future date and time.",
+  },
+  {
     emoji: "🎯",
     title: "Smart Segment",
     description:
@@ -50,12 +74,7 @@ const features = [
     description:
       "Go beyond names. Store personalized data like Order IDs or preferences to segment your audience effectively.",
   },
-  {
-    emoji: "🤖",
-    title: "Post Broadcast",
-    description:
-      "Automate after sending. Trigger actions like adding tags, updating fields, or sending follow-ups based on delivery status.",
-  },
+
   {
     emoji: "📝",
     title: "Notes & History",
@@ -82,7 +101,7 @@ const features = [
   },
   {
     emoji: "🏷️",
-    title: "Smart Tags",
+    title: "Tags",
     description:
       "Organize contacts with unlimited color-coded tags. Filter and broadcast to specific segments instantly.",
   },
@@ -125,7 +144,7 @@ const features = [
   },
   {
     emoji: "🔀",
-    title: "Spintax Engine",
+    title: "Spintax",
     description:
       "Avoid spam detection. Automatically randomize greetings and phrases (e.g., {Hi|Hello}) so every message looks unique.",
   },
@@ -136,12 +155,7 @@ const features = [
     description:
       "Express yourself clearly. Built-in emoji picker and rich text tools (Bold, Italic, Strikethrough) for perfect message composition.",
   },
-  {
-    emoji: "⏰",
-    title: "Schedule Message",
-    description:
-      "Never miss a follow-up. Draft messages now and schedule them to be sent automatically at a precise future date and time.",
-  },
+
   {
     emoji: "📂",
     title: "Bulk Chat Archiver",

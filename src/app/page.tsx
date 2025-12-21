@@ -126,10 +126,9 @@ export default function Home() {
                   "Quick Reply",
                   "Direct Chat",
                   "Custom Field",
-                  "Smart Segmentation",
+                  "Smart Segment",
                   "Export Contact",
-                  "Backup Chat",
-                  "Privacy First",
+                  "Privacy Blur",
                 ]}
                 typingSpeed={75}
                 deletingSpeed={50}

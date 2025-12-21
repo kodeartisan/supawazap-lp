@@ -71,25 +71,6 @@ export function Pricing() {
             </Text>
           </Stack>
 
-          {/* Urgency Warning Box */}
-          <Paper
-            radius="md"
-            p="xs"
-            px="lg"
-            style={{
-              backgroundColor: "rgba(6, 78, 59, 0.4)", // Dark Emerald bg
-              border: "1px solid rgba(16, 185, 129, 0.3)",
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <Group gap={8}>
-              <Icon icon="tabler:flame" color="#34d399" />
-              <Text size="sm" fw={500} c="emerald.1">
-                Once these slots are gone, price goes back to $99
-              </Text>
-            </Group>
-          </Paper>
-
           {/* --- MAIN PRICING CARD --- */}
           <Card
             radius={24}
@@ -121,7 +102,7 @@ export function Pricing() {
                 border: "1px solid rgba(16, 185, 129, 0.2)",
               }}
             >
-              ● Only 5 of 100 left
+              ● Only 5 of 30 left
             </Badge>
 
             <Stack gap={30} mt="xl">
@@ -182,7 +163,7 @@ export function Pricing() {
                   One-time payment
                 </Text>
                 <Text size="xs" c="emerald.4" mt={4} fw={600}>
-                  Limited to first 100 customers
+                  Limited to first 30 customers
                 </Text>
               </Box>
 
@@ -190,14 +171,14 @@ export function Pricing() {
               <Stack gap={6}>
                 <Group justify="space-between">
                   <Text size="xs" fw={700} c="white">
-                    95 claimed
+                    25 claimed
                   </Text>
                   <Text size="xs" fw={700} c="emerald.4">
                     5 remaining
                   </Text>
                 </Group>
                 <Progress
-                  value={95}
+                  value={75}
                   size="xl"
                   radius="xl"
                   color="emerald"
@@ -302,28 +283,6 @@ export function Pricing() {
 
             <Stack gap="lg" style={{ position: "relative", zIndex: 1 }}>
               {/* Stars & Verification */}
-              <Group justify="space-between">
-                <Group gap={4}>
-                  {[...Array(5)].map((_, i) => (
-                    <ThemeIcon
-                      key={i}
-                      variant="light"
-                      color="yellow"
-                      size="sm"
-                      radius="xl"
-                      style={{
-                        backgroundColor: "rgba(250, 204, 21, 0.1)",
-                      }}
-                    >
-                      <Icon
-                        icon="tabler:star-filled"
-                        color="#facc15"
-                        width={12}
-                      />
-                    </ThemeIcon>
-                  ))}
-                </Group>
-              </Group>
 
               {/* Quote */}
               <Text
@@ -332,8 +291,9 @@ export function Pricing() {
                 fw={500}
                 style={{ lineHeight: 1.4, fontStyle: "italic" }}
               >
-                "Stopped paying $50/month for separate CRM and broadcast tools.
-                Supawazap replaced them both with a single lifetime payment.{" "}
+                "Stopped paying $50/month for separate CRM and another whatsapp
+                marketing tools. Supawazap replaced them with a single lifetime
+                payment.{" "}
                 <Text
                   span
                   c="emerald.4"
@@ -347,18 +307,6 @@ export function Pricing() {
                 </Text>
                 "
               </Text>
-
-              {/* Author Profile */}
-              <Box>
-                <Stack gap={0}>
-                  <Text size="lg" fw={700} c="white">
-                    Michael Ross
-                  </Text>
-                  <Text size="md" c="dimmed">
-                    Digital Marketing Director
-                  </Text>
-                </Stack>
-              </Box>
             </Stack>
           </Paper>
         </Stack>
