@@ -171,7 +171,7 @@ export function Pricing() {
               <Stack gap={6}>
                 <Group justify="space-between">
                   <Text size="xs" fw={700} c="white">
-                    25 claimed
+                    🔥 25 claimed
                   </Text>
                   <Text size="xs" fw={700} c="emerald.4">
                     5 remaining
