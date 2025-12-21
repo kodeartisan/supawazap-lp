@@ -229,7 +229,7 @@ export function Pricing() {
               <Stack gap="xs">
                 <Button
                   component="a"
-                  href="https://extdotninja.lemonsqueezy.com/checkout/buy/01437eac-ea36-46b5-84c5-c7b92e6eab3a?logo=0"
+                  href={process.env.NEXT_PUBLIC_LEMON_SQUEEZY_URL || "#"}
                   target="_blank"
                   size="xl"
                   radius="md"
