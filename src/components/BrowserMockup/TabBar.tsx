@@ -96,6 +96,7 @@ function TabIcon({ icon, active, label, onClick }: TabIconProps) {
         variant="transparent"
         size={40}
         onClick={onClick}
+        aria-label={label}
         style={{
           color: active ? "#10b981" : "#94a3b8",
           // Add a subtle background for active state if desired

@@ -114,7 +114,12 @@ const FieldRenderer = ({ field }: { field: any }) => {
           label={field.name}
           defaultValue={field.value}
           rightSection={
-            <ActionIcon size="xs" variant="transparent" c="blue.4">
+            <ActionIcon
+              size="xs"
+              variant="transparent"
+              c="blue.4"
+              aria-label="Open Link"
+            >
               <Icon icon="tabler:external-link" width={12} />
             </ActionIcon>
           }
@@ -235,7 +240,12 @@ const FieldRenderer = ({ field }: { field: any }) => {
                 PDF Document
               </Text>
             </Stack>
-            <ActionIcon variant="subtle" color="red" size="sm">
+            <ActionIcon
+              variant="subtle"
+              color="red"
+              size="sm"
+              aria-label="Delete"
+            >
               <Icon icon="tabler:trash" width={12} />
             </ActionIcon>
           </Group>
@@ -292,7 +302,12 @@ export function CRMSidebar({ activeTab, onTabChange }: CRMSidebarProps) {
               Contact Info
             </Text>
           </Group>
-          <ActionIcon variant="subtle" color="gray" size="sm">
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            size="sm"
+            aria-label="Close Sidebar"
+          >
             <Icon icon="tabler:x" width={16} />
           </ActionIcon>
         </Group>
