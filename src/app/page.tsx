@@ -2,7 +2,6 @@ import { BrowserMockup } from "@/components/BrowserMockup/BrowserMockup";
 import { CTA } from "@/components/CTA";
 import { FAQ } from "@/components/FAQ/FAQ";
 import { FeaturedOn } from "@/components/FeaturedOn/FeaturedOn";
-
 import { Features } from "@/components/Features/Features";
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -28,7 +27,32 @@ import {
   ThemeIcon,
 } from "@mantine/core";
 
+// Ambil URL dari Environment Variable (Fallback ke localhost jika belum diset)
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 export default function Home() {
+  // Definisi Schema JSON-LD untuk SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Supawazap",
+    url: BASE_URL,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Chrome, Edge, Brave, Opera",
+    offers: {
+      "@type": "Offer",
+      price: "29.00",
+      priceCurrency: "USD",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "120",
+    },
+    description:
+      "The #1 WhatsApp CRM and Automation extension. Features include bulk sender, auto-reply, and contact management.",
+  };
+
   return (
     <Box
       pb={100}
@@ -44,6 +68,12 @@ export default function Home() {
         overflow: "hidden", // Prevents spotlight overflow scrollbars
       }}
     >
+      {/* --- SEO: JSON-LD Schema Script --- */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* 1. SPOTLIGHT EFFECT */}
       {/* A large radial gradient positioned behind the hero content */}
       <Box
@@ -60,7 +90,9 @@ export default function Home() {
           pointerEvents: "none",
         }}
       />
+
       <Navbar />
+
       <Container size="xl" mt={150} style={{ position: "relative", zIndex: 1 }}>
         <Stack gap="xl" align="center">
           {/* Hero Title */}
@@ -133,6 +165,7 @@ export default function Home() {
             >
               Add to Chrome - It's Free
             </Button>
+
             {/* UPGRADE: Helper Text dengan Social Proof */}
             <Box
               mt="lg"
@@ -166,10 +199,8 @@ export default function Home() {
                     No credit card
                   </Text>
                 </Group>
-
                 {/* Divider */}
                 <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
-
                 {/* No Sign Up */}
                 <Group gap={8}>
                   <ThemeIcon
@@ -187,10 +218,8 @@ export default function Home() {
                     No sign up
                   </Text>
                 </Group>
-
                 {/* Divider */}
                 <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
-
                 {/* Trusted */}
                 <Group gap={8}>
                   <ThemeIcon
@@ -215,18 +244,14 @@ export default function Home() {
             </Box>
           </Stack>
         </Stack>
-
         <BrowserMockup />
-
         <Stats />
       </Container>
-
       <Features />
       {/* <PainVsGain /> */}
       {/* <Testimonials /> */}
       <Pricing />
       {/* <FeaturedOn /> */}
-
       <FAQ />
       <CTA />
       <Footer />

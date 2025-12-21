@@ -15,10 +15,88 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Ambil URL dari Environment Variable (Fallback ke localhost jika belum diset)
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Supawazap: #1 CRM, Broadcast & Automation Tool for WhatsApp™ Web",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Supawazap: #1 CRM, Broadcast & Automation Tool for WhatsApp™ Web",
+    template: "%s | Supawazap",
+  },
   description:
     "Transform WhatsApp into a sales machine. The ultimate extension for Contact Management, Workflow Automation, Bulk Sender, and Schedule Messages. Start for free.",
+  // --- KEYWORDS SEO IMPLEMENTATION ---
+  keywords: [
+    // Primary Keywords (English)
+    "WhatsApp CRM",
+    "WhatsApp Automation Tool",
+    "WhatsApp Bulk Sender",
+    "WhatsApp Marketing Software",
+    "Chrome Extension for WhatsApp",
+    "WhatsApp Business Tool",
+    // Feature Specific
+    "WhatsApp Auto Reply Bot",
+    "WhatsApp Schedule Message",
+    "WhatsApp Group Scraper",
+    "Export WhatsApp Contacts",
+    "WhatsApp Privacy Blur",
+    "Direct Chat WhatsApp",
+    // Long-tail / Problem Solving
+    "Anti-ban WhatsApp Tool",
+    "Send bulk messages without saving number",
+    "Kirim pesan massal WA tanpa blokir",
+    "WhatsApp Web Plus Alternative",
+    "No Monthly Fee WhatsApp Tool",
+    "Lifetime Deal WhatsApp CRM",
+  ],
+  authors: [{ name: "Supawazap Team", url: BASE_URL }],
+  creator: "Supawazap",
+  publisher: "Supawazap",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Supawazap: Supercharge your WhatsApp™ Web",
+    description:
+      "The all-in-one CRM and Automation tool for professionals. Features include Bulk Sender, CRM, Auto-reply, and more. Privacy-focused and local-first.",
+    url: BASE_URL,
+    siteName: "Supawazap",
+    images: [
+      {
+        url: "/og-image.png", // Pastikan file ini ada di public/og-image.png
+        width: 1200,
+        height: 630,
+        alt: "Supawazap Dashboard Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Supawazap: #1 CRM & Automation for WhatsApp™",
+    description:
+      "Organize leads, automate follow-ups, and broadcast messages directly from WhatsApp Web.",
+    images: ["/og-image.png"],
+    creator: "@budiaaji", // Ganti dengan username twitter asli jika ada
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
