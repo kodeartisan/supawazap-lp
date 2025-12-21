@@ -23,26 +23,28 @@ const features = [
     title: "Contact Management",
     description:
       "Manage your leads. View detailed profiles, assign tags, and keep your contact list organized directly inside WhatsApp.",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "Q9Sur3myulg",
   },
   {
     emoji: "🚀",
     title: "Workflow Automation",
     description:
       "Build no-code chatbots. Visually create flows with triggers, keyword auto-replies, and actions to automate conversations 24/7.",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "6FJjvpJIFto",
   },
   {
     emoji: "📡",
     title: "Smart Broadcast",
     description:
       "Reach thousands instantly. Send personalized campaigns with schedule, batching, and spintax to avoid spam detection.",
+    youtubeId: "dFEg_ZxicYI",
   },
   {
     emoji: "🤖",
     title: "Post Broadcast",
     description:
       "Automate after sending. Trigger actions like adding tags, updating fields, or sending follow-ups based on delivery status.",
+    youtubeId: "dFEg_ZxicYI",
   },
   {
     emoji: "💾",
@@ -55,6 +57,7 @@ const features = [
     title: "Live Delivery Reports",
     description:
       "Monitor delivery status real-time. See who received, failed, or is pending. Retry failed messages and export detailed reports to CSV/Excel.",
+    youtubeId: "dFEg_ZxicYI",
   },
   {
     emoji: "⏰",
@@ -259,36 +262,39 @@ export function Features() {
               </Stack>
 
               {/* Hover Overlay */}
-              <Box
-                className="feature-overlay"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.6)",
-                  backdropFilter: "blur(4px)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  opacity: 0,
-                  transition: "opacity 0.2s ease",
-                  zIndex: 20,
-                  borderRadius: "inherit",
-                }}
-              >
-                <Button
-                  size="md"
-                  radius="xl"
-                  className="btn-primary-action view-demo-btn"
-                  leftSection={<Icon icon="tabler:eye" width={18} />}
-                  onClick={() => setActiveFeature(feature)}
+              {/* Hover Overlay */}
+              {feature.youtubeId && (
+                <Box
+                  className="feature-overlay"
                   style={{
-                    transform: "translateY(10px)",
-                    transition: "transform 0.2s ease",
+                    position: "absolute",
+                    inset: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.6)",
+                    backdropFilter: "blur(4px)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    opacity: 0,
+                    transition: "opacity 0.2s ease",
+                    zIndex: 20,
+                    borderRadius: "inherit",
                   }}
                 >
-                  Watch Demo
-                </Button>
-              </Box>
+                  <Button
+                    size="md"
+                    radius="xl"
+                    className="btn-primary-action view-demo-btn"
+                    leftSection={<Icon icon="tabler:eye" width={18} />}
+                    onClick={() => setActiveFeature(feature)}
+                    style={{
+                      transform: "translateY(10px)",
+                      transition: "transform 0.2s ease",
+                    }}
+                  >
+                    Watch Demo
+                  </Button>
+                </Box>
+              )}
             </PremiumCard>
           ))}
         </SimpleGrid>
