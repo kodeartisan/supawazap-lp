@@ -228,6 +228,9 @@ export function Pricing() {
               {/* CTA Button */}
               <Stack gap="xs">
                 <Button
+                  component="a"
+                  href="https://extdotninja.lemonsqueezy.com/checkout/buy/01437eac-ea36-46b5-84c5-c7b92e6eab3a?logo=0"
+                  target="_blank"
                   size="xl"
                   radius="md"
                   fullWidth
