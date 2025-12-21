@@ -183,6 +183,7 @@ export function Pricing() {
                   radius="xl"
                   color="emerald"
                   striped
+                  aria-label="Slots claimed"
                   styles={{
                     root: { backgroundColor: "rgba(255,255,255,0.05)" },
                     section: {

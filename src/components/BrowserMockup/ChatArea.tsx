@@ -39,7 +39,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
             <Text size="sm" fw={600} c="white">
               {contactName}
             </Text>
-            <Text size="xs" c="dimmed">
+            <Text size="xs" c="gray.5">
               online
             </Text>
           </Stack>
@@ -90,7 +90,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
               </Text>
               <Text
                 size="xs"
-                c="dimmed"
+                c="gray.5"
                 ta="right"
                 mt={4}
                 style={{ fontSize: 10 }}
@@ -117,7 +117,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
                 mimic human behavior, keeping your account safe.
               </Text>
               <Group justify="flex-end" gap={4} mt={4}>
-                <Text size="xs" style={{ opacity: 0.7, fontSize: 10 }}>
+                <Text size="xs" style={{ opacity: 0.9, fontSize: 10 }}>
                   10:31 AM
                 </Text>
                 <Icon

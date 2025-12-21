@@ -37,7 +37,11 @@ export function WhatsAppSidebar({ contactName }: WhatsAppSidebarProps) {
         bg="#202c33"
         style={{ borderRight: "1px solid rgba(255,255,255,0.05)" }}
       >
-        <Avatar size="md" src="https://i.pravatar.cc/150?img=11" />
+        <Avatar
+          size="md"
+          src="https://i.pravatar.cc/150?img=11"
+          alt="User Profile"
+        />
         <Group gap="sm">
           <ThemeIcon variant="transparent" c="dimmed">
             <Icon icon="tabler:users" width={20} />
@@ -95,12 +99,12 @@ export function WhatsAppSidebar({ contactName }: WhatsAppSidebarProps) {
                     {i === 1 ? contactName : "Hidden Contact"}
                   </Text>
                 </Box>
-                <Text size="xs" c="dimmed">
+                <Text size="xs" c="gray.5">
                   10:3{i} AM
                 </Text>
               </Group>
               <Box style={{ filter: "blur(4px)" }}>
-                <Text size="xs" c="dimmed" lineClamp={1}>
+                <Text size="xs" c="gray.5" lineClamp={1}>
                   Hey, I was wondering if you could send me...
                 </Text>
               </Box>

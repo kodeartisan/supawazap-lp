@@ -93,166 +93,182 @@ export default function Home() {
 
       <Navbar />
 
-      <Container size="xl" mt={150} style={{ position: "relative", zIndex: 1 }}>
-        <Stack gap="xl" align="center">
-          {/* Hero Title */}
-          <Title
-            order={1}
-            className="text-gradient"
-            style={{
-              fontSize: rem(60),
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-              textAlign: "center",
-            }}
-          >
-            WhatsApp with Superpowers <br />
+      <Box component="main">
+        <Container
+          size="xl"
+          mt={150}
+          style={{ position: "relative", zIndex: 1 }}
+        >
+          <Stack gap="xl" align="center">
+            {/* Hero Title */}
+            <Title
+              order={1}
+              className="text-gradient"
+              style={{
+                fontSize: rem(60),
+                fontWeight: 800,
+                lineHeight: 1.1,
+                letterSpacing: "-0.02em",
+                textAlign: "center",
+              }}
+            >
+              WhatsApp with Superpowers <br />
+              <Text
+                span
+                inherit
+                style={{
+                  background: "linear-gradient(to right, #34d399, #10b981)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                <Typewriter
+                  words={[
+                    "Workflow Automation",
+                    "CRM",
+                    "24/7 Auto-Reply",
+                    "Smart Broadcasting",
+                    "Quick Reply",
+                    "Direct Chat",
+                    "Custom Field",
+                    "Smart Segment",
+                    "Export Contact",
+                    "Privacy Blur",
+                  ]}
+                  typingSpeed={75}
+                  deletingSpeed={50}
+                  pauseTime={1500}
+                />
+              </Text>
+            </Title>
+
+            {/* Subtitle */}
             <Text
-              span
-              inherit
-              style={{
-                background: "linear-gradient(to right, #34d399, #10b981)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              <Typewriter
-                words={[
-                  "Workflow Automation",
-                  "CRM",
-                  "24/7 Auto-Reply",
-                  "Smart Broadcasting",
-                  "Quick Reply",
-                  "Direct Chat",
-                  "Custom Field",
-                  "Smart Segment",
-                  "Export Contact",
-                  "Privacy Blur",
-                ]}
-                typingSpeed={75}
-                deletingSpeed={50}
-                pauseTime={1500}
-              />
-            </Text>
-          </Title>
-
-          {/* Subtitle */}
-          <Text
-            c="dimmed"
-            size="xl"
-            ta="center"
-            maw={700}
-            style={{ fontSize: rem(26), lineHeight: 1.6 }}
-          >
-            One extension to replace your CRM, Auto-reply Bot, and Bulk Sender.
-            Organize leads, automate follow-ups, and broadcast messages without
-            switching tabs.
-          </Text>
-
-          {/* CTA Group */}
-          <Stack align="center" gap="xs">
-            <Button
+              c="dimmed"
               size="xl"
-              radius="xl"
-              className="btn-primary-action"
-              leftSection={<Icon icon="logos:chrome" fontSize={24} />}
-              style={{
-                height: rem(60),
-                fontSize: rem(18),
-              }}
+              ta="center"
+              maw={700}
+              style={{ fontSize: rem(26), lineHeight: 1.6 }}
             >
-              Add to Chrome - It's Free
-            </Button>
+              One extension to replace your CRM, Auto-reply Bot, and Bulk
+              Sender. Organize leads, automate follow-ups, and broadcast
+              messages without switching tabs.
+            </Text>
 
-            {/* UPGRADE: Helper Text dengan Social Proof */}
-            <Box
-              mt="lg"
-              py={10}
-              px={24}
-              style={{
-                borderRadius: 999,
-                backgroundColor: "rgba(255, 255, 255, 0.03)",
-                border: "1px solid rgba(255, 255, 255, 0.08)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                display: "inline-block",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-              }}
-            >
-              <Group gap="xl" wrap="wrap" justify="center">
-                {/* No Credit Card */}
-                <Group gap={8}>
-                  <ThemeIcon
-                    size={22}
-                    color="gray"
-                    variant="light"
-                    radius="xl"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    }}
-                  >
-                    <Text size="xs">💳</Text>
-                  </ThemeIcon>
-                  <Text size="sm" c="gray.2" fw={500}>
-                    No credit card
-                  </Text>
-                </Group>
-                {/* Divider */}
-                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
-                {/* No Sign Up */}
-                <Group gap={8}>
-                  <ThemeIcon
-                    size={22}
-                    color="gray"
-                    variant="light"
-                    radius="xl"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    }}
-                  >
-                    <Text size="xs">👤</Text>
-                  </ThemeIcon>
-                  <Text size="sm" c="gray.2" fw={500}>
-                    No sign up
-                  </Text>
-                </Group>
-                {/* Divider */}
-                <Box w={1} h={20} bg="rgba(255,255,255,0.1)" visibleFrom="xs" />
-                {/* Trusted */}
-                <Group gap={8}>
-                  <ThemeIcon
-                    size={22}
-                    color="gray"
-                    variant="light"
-                    radius="xl"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    }}
-                  >
-                    <Text size="xs">⭐</Text>
-                  </ThemeIcon>
-                  <Text size="sm" c="gray.2" fw={500}>
-                    Trusted by{" "}
-                    <Text span fw={700} c="white">
-                      Professionals
+            {/* CTA Group */}
+            <Stack align="center" gap="xs">
+              <Button
+                size="xl"
+                radius="xl"
+                className="btn-primary-action"
+                leftSection={<Icon icon="logos:chrome" fontSize={24} />}
+                style={{
+                  height: rem(60),
+                  fontSize: rem(18),
+                }}
+              >
+                Add to Chrome - It's Free
+              </Button>
+
+              {/* UPGRADE: Helper Text dengan Social Proof */}
+              <Box
+                mt="lg"
+                py={10}
+                px={24}
+                style={{
+                  borderRadius: 999,
+                  backgroundColor: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                  display: "inline-block",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                }}
+              >
+                <Group gap="xl" wrap="wrap" justify="center">
+                  {/* No Credit Card */}
+                  <Group gap={8}>
+                    <ThemeIcon
+                      size={22}
+                      color="gray"
+                      variant="light"
+                      radius="xl"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      }}
+                    >
+                      <Text size="xs">💳</Text>
+                    </ThemeIcon>
+                    <Text size="sm" c="gray.2" fw={500}>
+                      No credit card
                     </Text>
-                  </Text>
+                  </Group>
+                  {/* Divider */}
+                  <Box
+                    w={1}
+                    h={20}
+                    bg="rgba(255,255,255,0.1)"
+                    visibleFrom="xs"
+                  />
+                  {/* No Sign Up */}
+                  <Group gap={8}>
+                    <ThemeIcon
+                      size={22}
+                      color="gray"
+                      variant="light"
+                      radius="xl"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      }}
+                    >
+                      <Text size="xs">👤</Text>
+                    </ThemeIcon>
+                    <Text size="sm" c="gray.2" fw={500}>
+                      No sign up
+                    </Text>
+                  </Group>
+                  {/* Divider */}
+                  <Box
+                    w={1}
+                    h={20}
+                    bg="rgba(255,255,255,0.1)"
+                    visibleFrom="xs"
+                  />
+                  {/* Trusted */}
+                  <Group gap={8}>
+                    <ThemeIcon
+                      size={22}
+                      color="gray"
+                      variant="light"
+                      radius="xl"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      }}
+                    >
+                      <Text size="xs">⭐</Text>
+                    </ThemeIcon>
+                    <Text size="sm" c="gray.2" fw={500}>
+                      Trusted by{" "}
+                      <Text span fw={700} c="white">
+                        Professionals
+                      </Text>
+                    </Text>
+                  </Group>
                 </Group>
-              </Group>
-            </Box>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-        <BrowserMockup />
-        <Stats />
-      </Container>
-      <Features />
-      {/* <PainVsGain /> */}
-      {/* <Testimonials /> */}
-      <Pricing />
-      {/* <FeaturedOn /> */}
-      <FAQ />
-      <CTA />
+          <BrowserMockup />
+          <Stats />
+        </Container>
+        <Features />
+        {/* <PainVsGain /> */}
+        {/* <Testimonials /> */}
+        <Pricing />
+        {/* <FeaturedOn /> */}
+        <FAQ />
+        <CTA />
+      </Box>
       <Footer />
     </Box>
   );
