@@ -257,8 +257,7 @@ export function Pricing() {
             </Stack>
           </Card>
 
-          {/* Premium Testimonial */}
-          <Paper
+          {/* <Paper
             p="xl"
             radius="xl"
             w="100%"
@@ -271,7 +270,6 @@ export function Pricing() {
               overflow: "hidden",
             }}
           >
-            {/* Decorative Quote Icon Background */}
             <Icon
               icon="tabler:quote"
               color="white"
@@ -286,9 +284,6 @@ export function Pricing() {
             />
 
             <Stack gap="lg" style={{ position: "relative", zIndex: 1 }}>
-              {/* Stars & Verification */}
-
-              {/* Quote */}
               <Text
                 size="xl"
                 c="white"
@@ -312,7 +307,7 @@ export function Pricing() {
                 "
               </Text>
             </Stack>
-          </Paper>
+          </Paper> */}
         </Stack>
       </Container>
     </Box>
