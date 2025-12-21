@@ -11,6 +11,7 @@ import {
   Group,
   Flex,
   Collapse,
+  UnstyledButton,
 } from "@mantine/core";
 import { Icon } from "@iconify/react";
 
@@ -150,20 +151,24 @@ export function FeaturedOn() {
           </Collapse>
 
           {/* And More / Show Less Button */}
-          <Group
-            gap="xs"
+          <UnstyledButton
             onClick={() => setShowMore(!showMore)}
             style={{
               cursor: "pointer",
               opacity: 0.7,
               transition: "opacity 0.2s",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
             }}
-            onMouseEnter={(e) => {
+            onMouseEnter={(e: any) => {
               e.currentTarget.style.opacity = "1";
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={(e: any) => {
               e.currentTarget.style.opacity = "0.7";
             }}
+            aria-expanded={showMore}
+            aria-controls="secondary-badges-collapse"
           >
             <Text c="dimmed" size="sm">
               {showMore ? "Show Less" : "And More"}
@@ -173,7 +178,7 @@ export function FeaturedOn() {
               width={14}
               color="#9ca3af"
             />
-          </Group>
+          </UnstyledButton>
         </Stack>
       </Container>
     </Box>

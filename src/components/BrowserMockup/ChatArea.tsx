@@ -147,6 +147,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
             size={28}
             radius="xl"
             color="emerald"
+            aria-label="Quick Reply"
             style={{ boxShadow: "0 4px 6px rgba(0,0,0,0.3)" }}
           >
             <Icon icon="tabler:bolt" width={15} />
@@ -159,6 +160,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
             size={28}
             radius="xl"
             color="emerald"
+            aria-label="Copy Number"
             style={{
               boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
             }}
@@ -173,6 +175,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
             size={28}
             radius="xl"
             color="emerald"
+            aria-label="Contact Profile"
             style={{
               boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
             }}
@@ -187,6 +190,7 @@ export function ChatArea({ contactName }: ChatAreaProps) {
             size={28}
             radius="xl"
             color="emerald"
+            aria-label="Schedule Message"
             style={{
               boxShadow: "0 4px 6px rgba(0,0,0,0.3)",
             }}
@@ -223,7 +227,13 @@ export function ChatArea({ contactName }: ChatAreaProps) {
         >
           <Text size="sm">Type a message</Text>
           <Tooltip label="Quick Reply" withArrow>
-            <ActionIcon variant="light" color="emerald" radius="xl" size="sm">
+            <ActionIcon
+              variant="light"
+              color="emerald"
+              radius="xl"
+              size="sm"
+              aria-label="Quick Reply"
+            >
               <Icon icon="tabler:bolt" width={14} />
             </ActionIcon>
           </Tooltip>

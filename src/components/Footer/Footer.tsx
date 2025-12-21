@@ -132,6 +132,9 @@ export function Footer() {
                   radius="md"
                   component="a"
                   href={item.link}
+                  aria-label={
+                    item.icon.includes("twitter") ? "Twitter" : "YouTube"
+                  } // Add explicit aria-label
                   style={{
                     border: "1px solid rgba(255,255,255,0.05)",
                     transition: "all 0.2s",
