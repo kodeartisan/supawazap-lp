@@ -35,13 +35,13 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Supawazap",
+    name: "Supawazap: The All-in-One WhatsApp Marketing Toolkit",
     url: BASE_URL,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Chrome, Edge, Brave, Opera",
     offers: {
       "@type": "Offer",
-      price: "29.00",
+      price: "0",
       priceCurrency: "USD",
     },
     aggregateRating: {
@@ -50,7 +50,7 @@ export default function Home() {
       ratingCount: "120",
     },
     description:
-      "The #1 WhatsApp CRM and Automation extension. Features include bulk sender, auto-reply, and contact management.",
+      "Stop paying for separate subscriptions. The All-in-One WhatsApp CRM & Marketing Toolkit to organize leads, automate follow-ups, and broadcast campaigns.",
   };
 
   return (
@@ -112,7 +112,7 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              WhatsApp with Superpowers <br />
+              The{" "}
               <Text
                 span
                 inherit
@@ -122,24 +122,10 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                <Typewriter
-                  words={[
-                    "Workflow Automation",
-                    "CRM",
-                    "24/7 Auto-Reply",
-                    "Smart Broadcasting",
-                    "Quick Reply",
-                    "Direct Chat",
-                    "Custom Field",
-                    "Smart Segment",
-                    "Export Contact",
-                    "Privacy Blur",
-                  ]}
-                  typingSpeed={75}
-                  deletingSpeed={50}
-                  pauseTime={1500}
-                />
-              </Text>
+                All-in-One
+              </Text>{" "}
+              <br />
+              WhatsApp CRM & Marketing Toolkit
             </Title>
 
             {/* Subtitle */}
@@ -150,9 +136,9 @@ export default function Home() {
               maw={700}
               style={{ fontSize: rem(26), lineHeight: 1.6 }}
             >
-              One extension to replace your CRM, Auto-reply Bot, and Bulk
-              Sender. Organize leads, automate follow-ups, and broadcast
-              messages without switching tabs.
+              Boost efficiency and cut costs. The all-in-one toolkit that
+              replaces your CRM, automates your daily grind, and skyrockets your
+              productivity
             </Text>
 
             {/* CTA Group */}

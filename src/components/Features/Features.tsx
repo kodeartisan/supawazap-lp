@@ -208,7 +208,7 @@ export function Features() {
             style={{ lineHeight: 1.6 }}
           >
             Why install multiple extensions? Get every utility you need for
-            WhatsApp marketing in a single, lightweight package.
+            WhatsApp marketing in a single, lightweight toolkit.
           </Text>
         </Stack>
 

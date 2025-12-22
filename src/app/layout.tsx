@@ -21,18 +21,20 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Supawazap: #1 CRM, Broadcast & Automation Tool for WhatsApp™ Web",
+    default: "Supawazap: The All-in-One WhatsApp CRM & Marketing Toolkit",
     template: "%s | Supawazap",
   },
   description:
-    "Transform WhatsApp into a sales machine. The ultimate extension for Contact Management, Workflow Automation, Bulk Sender, and Schedule Messages. Start for free.",
+    "Stop paying for separate subscriptions. The All-in-One WhatsApp CRM & Marketing Toolkit to organize leads, automate follow-ups, and broadcast campaigns.",
   // --- KEYWORDS SEO IMPLEMENTATION ---
   keywords: [
     // Primary Keywords (English)
     "WhatsApp CRM",
     "WhatsApp Automation Tool",
     "WhatsApp Bulk Sender",
-    "WhatsApp Marketing Software",
+    "All-in-One WhatsApp Marketing Tool", // NEW
+    "WhatsApp Marketing Toolkit", // NEW
+    "WhatsApp CRM Extension", // NEW
     "Chrome Extension for WhatsApp",
     "WhatsApp Business Tool",
     // Feature Specific
@@ -42,11 +44,11 @@ export const metadata: Metadata = {
     "Export WhatsApp Contacts",
     "WhatsApp Privacy Blur",
     "Direct Chat WhatsApp",
-    // Long-tail / Problem Solving
-    "Anti-ban WhatsApp Tool",
     "Send bulk messages without saving number",
-    "Kirim pesan massal WA tanpa blokir",
     "WhatsApp Web Plus Alternative",
+    "Cooby Alternative",
+    "Wali Alternative",
+    "WAWCD Alternative",
     "No Monthly Fee WhatsApp Tool",
     "Lifetime Deal WhatsApp CRM",
   ],
