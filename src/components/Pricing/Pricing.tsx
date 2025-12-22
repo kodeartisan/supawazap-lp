@@ -257,7 +257,7 @@ export function Pricing() {
             </Stack>
           </Card>
 
-          {/* <Paper
+          <Paper
             p="xl"
             radius="xl"
             w="100%"
@@ -307,7 +307,7 @@ export function Pricing() {
                 "
               </Text>
             </Stack>
-          </Paper> */}
+          </Paper>
         </Stack>
       </Container>
     </Box>
