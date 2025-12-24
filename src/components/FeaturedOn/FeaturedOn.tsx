@@ -28,7 +28,7 @@ const PRIMARY_BADGES = [
 
 // Secondary badges - shown when "And More" is clicked
 //@ts-ignore
-const SECONDARY_BADGES = [];
+const SECONDARY_BADGES: any[] = [];
 
 const BadgeItem = ({ badge }: { badge: (typeof PRIMARY_BADGES)[0] }) => (
   <Box
@@ -94,7 +94,7 @@ export function FeaturedOn() {
             </Text>
           </Stack>
 
-          {/* Primary Badges */}
+          {/* Primary Bdges */}
           <Flex wrap="wrap" gap="lg" justify="center" align="center" maw={900}>
             {PRIMARY_BADGES.map((badge, index) => (
               <BadgeItem key={index} badge={badge} />
