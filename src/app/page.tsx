@@ -254,7 +254,7 @@ export default function Home() {
         {/* <PainVsGain /> */}
         {/* <Testimonials /> */}
         <Pricing />
-        {/* <FeaturedOn /> */}
+        <FeaturedOn />
         <FAQ />
         <CTA />
       </Box>

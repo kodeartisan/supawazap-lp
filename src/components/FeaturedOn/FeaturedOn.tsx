@@ -18,59 +18,17 @@ import { Icon } from "@iconify/react";
 // Primary badges - always visible
 const PRIMARY_BADGES = [
   {
-    src: "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=YOUR_POST_ID&theme=dark",
-    alt: "Product Hunt",
-    href: "https://www.producthunt.com/",
-    width: 200,
-    height: 45,
-  },
-  {
-    src: "https://www.tinylaunch.com/tinylaunch_badge_1.svg",
-    alt: "TinyLaunch",
-    href: "https://www.tinylaunch.com/",
-    width: 160,
-    height: 40,
-  },
-  {
-    src: "https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=YOUR_LAUNCH_ID&badge_type=daily&theme=dark",
-    alt: "Fazier",
-    href: "https://fazier.com/",
-    width: 215,
-    height: 50,
-  },
-  {
-    src: "https://www.uneed.best/POTD2.png",
-    alt: "Uneed",
-    href: "https://www.uneed.best/",
-    width: 180,
-    height: 50,
+    src: "https://cdn.prod.website-files.com/63d8afd87da01fb58ea3fbcb/6487e2868c6c8f93b4828827_dang-badge.png",
+    alt: "Dang.ai",
+    href: "https://dang.ai/",
+    width: 150,
+    height: 54,
   },
 ];
 
 // Secondary badges - shown when "And More" is clicked
-const SECONDARY_BADGES = [
-  {
-    src: "https://www.founderplug.com/badges/2TopProduct.png",
-    alt: "FounderPlug",
-    href: "https://www.founderplug.com/",
-    width: 160,
-    height: 50,
-  },
-  {
-    src: "https://rankinpublic.xyz/api/badges/badge3.png?site=supawazap",
-    alt: "RankInPublic",
-    href: "https://rankinpublic.xyz/",
-    width: 140,
-    height: 40,
-  },
-  {
-    src: "https://saasboilerplates.dev/badges/Neutral.png",
-    alt: "Best SaaS Boilerplates",
-    href: "https://saasboilerplates.dev/",
-    width: 200,
-    height: 50,
-  },
-];
+//@ts-ignore
+const SECONDARY_BADGES = [];
 
 const BadgeItem = ({ badge }: { badge: (typeof PRIMARY_BADGES)[0] }) => (
   <Box
@@ -113,15 +71,24 @@ export function FeaturedOn() {
       <Container size="lg">
         <Stack align="center" gap="xl">
           {/* Title */}
-          <Stack align="center" gap="xs" ta="center">
+          <Stack align="center" gap="lg" ta="center">
             <Title
               order={2}
-              style={{ fontSize: rem(36) }}
               className="text-gradient"
+              style={{
+                fontSize: rem(60),
+                fontWeight: 800,
+                lineHeight: 1.1,
+              }}
             >
               Featured on leading startup platforms
             </Title>
-            <Text c="dimmed" size="lg" maw={600}>
+            <Text
+              c="dimmed"
+              ta="center"
+              maw={700}
+              style={{ fontSize: rem(22), lineHeight: 1.6 }}
+            >
               Proudly featured across startup platforms where founders and
               makers launch their ideas.
             </Text>
