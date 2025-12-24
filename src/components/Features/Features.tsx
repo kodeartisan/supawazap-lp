@@ -385,11 +385,8 @@ export function Features() {
             </Text>
             <Button
               component="a"
-              href="https://chromewebstore.google.com/detail/supawazap/jbbjnkkhhlgglfcpcngjfkjjmldkphgl"
+              href="https://chromewebstore.google.com/detail/supawazap-whatsapp-web-wi/elepijhjinijhgkcdhkpheojnpheelhl"
               target="_blank"
-              // color="emerald" // Theme primary is emerald, so default is fine, but being explicit is safe.
-              // radius="xl"    // Theme default is xl.
-              // Let's rely on theme defaults where possible, but I will explicitly set it to match the "Install" buttons elsewhere which are likely emerald.
               color="emerald"
               size="md"
               radius="xl"

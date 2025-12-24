@@ -202,6 +202,9 @@ export function Navbar() {
             <Group gap={12} wrap="nowrap">
               {/* Premium Button */}
               <Button
+                component="a"
+                href="https://chromewebstore.google.com/detail/supawazap-whatsapp-web-wi/elepijhjinijhgkcdhkpheojnpheelhl"
+                target="_blank"
                 variant="filled"
                 color="emerald"
                 size={scrolled ? "sm" : "md"}
@@ -306,6 +309,9 @@ export function Navbar() {
             );
           })}
           <Button
+            component="a"
+            href="https://chromewebstore.google.com/detail/supawazap-whatsapp-web-wi/elepijhjinijhgkcdhkpheojnpheelhl"
+            target="_blank"
             fullWidth
             size="xl"
             variant="filled"
