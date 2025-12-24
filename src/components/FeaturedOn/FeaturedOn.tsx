@@ -24,6 +24,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://submitaitools.org/static_submitaitools/images/submitaitools.png",
+    alt: "Submit AI Tools",
+    href: "https://submitaitools.org",
+    width: 200,
+    height: 60,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
