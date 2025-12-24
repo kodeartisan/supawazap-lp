@@ -144,6 +144,9 @@ export default function Home() {
             {/* CTA Group */}
             <Stack align="center" gap="xs">
               <Button
+                component="a"
+                href="https://chromewebstore.google.com/detail/supawazap-whatsapp-web-wi/elepijhjinijhgkcdhkpheojnpheelhl"
+                target="_blank"
                 size="xl"
                 radius="xl"
                 className="btn-primary-action"
