@@ -38,6 +38,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 54,
   },
+  {
+    src: "https://frogdr.com/supawazap.com/badge-white.svg",
+    alt: "Monitor your Domain Rating with FrogDR",
+    href: "https://frogdr.com/supawazap.com?utm_source=supawazap.com",
+    width: 250,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
