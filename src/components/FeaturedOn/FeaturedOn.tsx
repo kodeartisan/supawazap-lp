@@ -52,6 +52,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://findly.tools/badges/findly-tools-badge-dark.svg",
+    alt: "Featured on findly.tools",
+    href: "https://findly.tools/supawazap?utm_source=supawazap",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
