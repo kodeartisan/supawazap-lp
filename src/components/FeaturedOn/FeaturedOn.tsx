@@ -31,6 +31,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 60,
   },
+  {
+    src: "https://twelve.tools/badge1-dark.svg",
+    alt: "Featured on Twelve Tools",
+    href: "https://twelve.tools",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
