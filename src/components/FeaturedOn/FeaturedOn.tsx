@@ -45,6 +45,13 @@ const PRIMARY_BADGES = [
     width: 250,
     height: 54,
   },
+  {
+    src: "https://img.turbo0.com/badge-listed-light.svg",
+    alt: "Listed on Turbo0",
+    href: "https://turbo0.com/item/supawazap",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
