@@ -73,6 +73,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "/badges/indie-deals-badge.svg",
+    alt: "Find us on Indie.Deals",
+    href: "https://indie.deals?ref=https%3A%2F%2Fsupawazap.com",
+    width: 180,
+    height: 60,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
