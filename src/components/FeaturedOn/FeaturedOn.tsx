@@ -59,6 +59,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://wired.business/badge1-dark.svg",
+    alt: "Featured on Wired Business",
+    href: "https://wired.business",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
