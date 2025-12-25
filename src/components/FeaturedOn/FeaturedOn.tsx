@@ -94,6 +94,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 54,
   },
+  {
+    src: "https://acidtools.com/assets/images/badge-dark.png",
+    alt: "Acid Tools",
+    href: "https://acidtools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
