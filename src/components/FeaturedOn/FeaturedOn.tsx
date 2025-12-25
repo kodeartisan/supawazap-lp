@@ -80,6 +80,13 @@ const PRIMARY_BADGES = [
     width: 180,
     height: 60,
   },
+  {
+    src: "https://dofollow.tools/badge/badge_dark.svg",
+    alt: "Featured on Dofollow.Tools",
+    href: "https://dofollow.tools",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
