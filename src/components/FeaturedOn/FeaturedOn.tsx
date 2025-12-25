@@ -101,6 +101,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://cdn.startupslab.site/site-images/badge-dark.png",
+    alt: "Featured on Startups Lab",
+    href: "https://startupslab.site",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
