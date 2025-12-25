@@ -87,6 +87,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 54,
   },
+  {
+    src: "https://auraplusplus.com/images/badges/featured-on-dark.svg",
+    alt: "Featured on Aura++",
+    href: "https://auraplusplus.com/projects/supawazap",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
