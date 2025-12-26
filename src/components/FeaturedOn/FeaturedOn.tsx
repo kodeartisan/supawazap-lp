@@ -143,6 +143,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://www.proofstories.io/directory/badges/l/supawazap.svg",
+    alt: "Featured on Proof Stories",
+    href: "https://www.proofstories.io/directory/products/supawazap/",
+    width: 150,
+    height: 60,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
