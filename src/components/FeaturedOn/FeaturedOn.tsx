@@ -115,6 +115,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 54,
   },
+  {
+    src: "https://dayslaunch.com/badages-awards.svg",
+    alt: "Featured on Days Launch",
+    href: "https://dayslaunch.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
