@@ -122,6 +122,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1053964&theme=light",
+    alt: "Supawazap - Featured on Product Hunt",
+    href: "https://www.producthunt.com/products/supawazap?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-supawazap",
+    width: 250,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
