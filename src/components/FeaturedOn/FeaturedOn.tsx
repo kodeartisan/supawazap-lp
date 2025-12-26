@@ -150,13 +150,6 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 60,
   },
-  {
-    src: "https://favtool.ai/badge/dark.png",
-    alt: "Featured on FavTool.ai",
-    href: "https://favtool.ai",
-    width: 200,
-    height: 60,
-  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
