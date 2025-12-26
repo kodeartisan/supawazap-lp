@@ -108,6 +108,13 @@ const PRIMARY_BADGES = [
     width: 200,
     height: 54,
   },
+  {
+    src: "/badges/agenthunter-badge.svg",
+    alt: "Featured AI Agent on AgentHunter",
+    href: "https://www.agenthunter.io?utm_source=badge&utm_medium=embed&utm_campaign=Supawazap",
+    width: 200,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
