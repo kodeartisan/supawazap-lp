@@ -129,6 +129,13 @@ const PRIMARY_BADGES = [
     width: 250,
     height: 54,
   },
+  {
+    src: "https://assets.bestsky.tools/badges/featured-light.svg",
+    alt: "Featured on BestskyTools",
+    href: "https://bestsky.tools?utm_source=badge",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
