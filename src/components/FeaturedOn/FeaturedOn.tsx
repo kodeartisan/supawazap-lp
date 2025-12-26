@@ -136,6 +136,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://startupbenchmarks.com/assets/images/badge-dark.png",
+    alt: "Startup Benchmarks",
+    href: "https://startupbenchmarks.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
