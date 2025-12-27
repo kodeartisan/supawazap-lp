@@ -318,6 +318,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://softwarebolt.com/assets/images/badge-dark.png",
+    alt: "Software Bolt",
+    href: "https://softwarebolt.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
