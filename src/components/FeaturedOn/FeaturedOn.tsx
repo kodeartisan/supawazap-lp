@@ -409,6 +409,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://soproduct.com/badages-awards.svg",
+    alt: "Featured on So Product",
+    href: "https://soproduct.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
