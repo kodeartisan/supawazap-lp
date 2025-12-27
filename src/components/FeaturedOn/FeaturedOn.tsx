@@ -395,6 +395,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://startupdirs.com/bage.png",
+    alt: "Featured on startupdirs.com",
+    href: "https://startupdirs.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
