@@ -178,6 +178,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://saasfield.com/assets/images/badge-dark.png",
+    alt: "SaaS Field",
+    href: "https://saasfield.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
