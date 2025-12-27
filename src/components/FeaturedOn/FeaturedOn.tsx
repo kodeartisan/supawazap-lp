@@ -220,6 +220,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://besttoolvault.com/assets/images/badge-dark.png",
+    alt: "Best Tool Vault",
+    href: "https://besttoolvault.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
