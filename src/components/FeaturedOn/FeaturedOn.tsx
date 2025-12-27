@@ -304,6 +304,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://stackdirectory.com/assets/images/badge-dark.png",
+    alt: "Stack Directory",
+    href: "https://stackdirectory.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
