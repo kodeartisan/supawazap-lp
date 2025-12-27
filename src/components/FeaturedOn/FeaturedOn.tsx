@@ -311,6 +311,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://sourcedir.com/assets/images/badge-dark.png",
+    alt: "Source Dir",
+    href: "https://sourcedir.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
