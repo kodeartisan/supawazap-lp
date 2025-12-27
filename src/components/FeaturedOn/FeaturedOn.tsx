@@ -367,6 +367,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://shinylaunch.com/static/images/badge-dark.png",
+    alt: "ShinyLaunch",
+    href: "https://shinylaunch.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
