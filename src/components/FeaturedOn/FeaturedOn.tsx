@@ -262,6 +262,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://themegatools.com/assets/images/badge-dark.png",
+    alt: "The Mega Tools",
+    href: "https://themegatools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
