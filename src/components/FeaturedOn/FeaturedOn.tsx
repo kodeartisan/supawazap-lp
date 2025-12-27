@@ -241,6 +241,13 @@ const PRIMARY_BADGES = [
     width: 240,
     height: 54,
   },
+  {
+    src: "https://www.justsimple.tools/badge.svg",
+    alt: "Listed on JustSimple Tools",
+    href: "https://www.justsimple.tools",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
