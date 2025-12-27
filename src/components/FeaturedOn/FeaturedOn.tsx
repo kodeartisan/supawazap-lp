@@ -353,6 +353,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://saashubdirectory.com/assets/images/badge-dark.png",
+    alt: "SaaS Hub Directory",
+    href: "https://saashubdirectory.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
