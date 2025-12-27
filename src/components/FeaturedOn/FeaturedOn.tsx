@@ -416,6 +416,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://startuptostartup.com/badages-awards.svg",
+    alt: "Featured on Startup To Startup",
+    href: "https://startuptostartup.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
