@@ -388,6 +388,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://thekeytools.com/assets/images/badge-dark.png",
+    alt: "The Key Tools",
+    href: "https://thekeytools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
