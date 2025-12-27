@@ -234,6 +234,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://startuptrusted.com/api/badge?type=featured&style=dark",
+    alt: "Supawazap on StartupTrusted",
+    href: "https://startuptrusted.com?ref=supawazap.com",
+    width: 240,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
