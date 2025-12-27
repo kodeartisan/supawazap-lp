@@ -206,6 +206,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://huntfortools.com/assets/images/badge-dark.png",
+    alt: "Hunt for Tools",
+    href: "https://huntfortools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
