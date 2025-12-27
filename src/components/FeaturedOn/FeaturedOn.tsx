@@ -213,6 +213,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://goodaitools.com/assets/images/badge-dark.png",
+    alt: "Good AI Tools",
+    href: "https://goodaitools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
