@@ -346,6 +346,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://saasroots.com/assets/images/badge-dark.png",
+    alt: "SaaS Roots",
+    href: "https://saasroots.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
