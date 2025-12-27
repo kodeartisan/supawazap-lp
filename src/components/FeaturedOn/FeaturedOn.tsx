@@ -402,6 +402,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://productwill.com/badages-awards.svg",
+    alt: "Featured on Product Will",
+    href: "https://productwill.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
