@@ -171,6 +171,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://solvertools.com/assets/images/badge-dark.png",
+    alt: "Solver Tools",
+    href: "https://solvertools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
