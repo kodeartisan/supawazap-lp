@@ -199,6 +199,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://latestaiupdates.com/assets/images/badge-dark.png",
+    alt: "Latest AI Updates",
+    href: "https://latestaiupdates.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
