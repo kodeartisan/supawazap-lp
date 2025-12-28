@@ -514,6 +514,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://launchscroll.com/assets/images/badge-dark.png",
+    alt: "Launch Scroll",
+    href: "https://launchscroll.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
