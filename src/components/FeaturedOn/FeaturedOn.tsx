@@ -430,6 +430,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://uno.directory/uno-directory.svg",
+    alt: "Listed on Uno Directory",
+    href: "https://uno.directory",
+    width: 120,
+    height: 30,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
