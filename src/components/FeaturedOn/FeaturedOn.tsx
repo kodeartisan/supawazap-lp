@@ -500,6 +500,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://toolfio.com/toolfio.com-dark.svg",
+    alt: "Featured on Toolfio",
+    href: "https://toolfio.com/browser-extensions/supawazap",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
