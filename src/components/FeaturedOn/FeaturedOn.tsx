@@ -423,6 +423,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://submitmysaas.com/featured-badge.png",
+    alt: "Featured on SubmitMySaas",
+    href: "https://submitmysaas.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
