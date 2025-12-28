@@ -437,6 +437,13 @@ const PRIMARY_BADGES = [
     width: 120,
     height: 30,
   },
+  {
+    src: "https://geoly.net/badge-dark.svg",
+    alt: "Featured on geoly.net",
+    href: "https://geoly.net/item/supawazap",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
