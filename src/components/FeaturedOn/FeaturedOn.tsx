@@ -465,6 +465,13 @@ const PRIMARY_BADGES = [
     width: 150,
     height: 54,
   },
+  {
+    src: "https://toptrendtools.com/assets/images/badge-dark.png",
+    alt: "Top Trend Tools",
+    href: "https://toptrendtools.com",
+    width: 150,
+    height: 54,
+  },
 ];
 
 // Secondary badges - shown when "And More" is clicked
